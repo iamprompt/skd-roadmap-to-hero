@@ -1,4 +1,4 @@
-export const mockCourseData = [
+export const mockCourseTech = [
   {
     imgUrl:
       'https://public-assets.skooldio.com/storefront-sku/b14a037f-2c98-4bae-b216-1cb383ffd634/basics-web.png',
