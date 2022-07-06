@@ -7,7 +7,12 @@ module.exports = {
     fontFamily: {
       sans: ['IBM Plex Sans Thai', 'Rubik', ...defaultTheme.fontFamily.sans],
     },
-    extend: {},
+    extend: {
+      width: {
+        83: '20.75rem',
+        92: '23rem',
+      },
+    },
   },
   plugins: [],
 }
