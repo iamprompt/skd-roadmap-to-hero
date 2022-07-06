@@ -17,4 +17,7 @@ Default.args = {
   title: 'UI Design with Figma',
   info: 'ออกแบบ UI ไปจนถึงการทำ Prototype ด้วย Figma',
   hour: '6-8 ชั่วโมง',
+  instructor: 'Skooldio Team',
+  instructorImgUrl:
+    'https://public-assets.skooldio.com/storefront-category%2F6bae3f47-a202-42ec-883f-1b5c459d401a%2FSkooldio_logo_crop.jpeg',
 }
