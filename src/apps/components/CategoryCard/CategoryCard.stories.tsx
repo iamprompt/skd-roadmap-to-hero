@@ -28,19 +28,19 @@ export const MultipleCategoryCard = () => (
     />
     <CategoryCard
       linkUrl="#"
-      imgUrl="/images/category/data-icon.png"
+      imgUrl="/images/category/technology-icon.png"
       categoryName="Technology"
       description="เรียนรู้และฝึกฝนกระบวนการคิดสร้างมูลค่าให้ธุรกิจด้วยข้อมูล"
     />
     <CategoryCard
       linkUrl="#"
-      imgUrl="/images/category/data-icon.png"
+      imgUrl="/images/category/design-icon.png"
       categoryName="Design"
       description="เรียนรู้และฝึกฝนกระบวนการคิดสร้างมูลค่าให้ธุรกิจด้วยข้อมูล"
     />
     <CategoryCard
       linkUrl="#"
-      imgUrl="/images/category/data-icon.png"
+      imgUrl="/images/category/business-icon.png"
       categoryName="Business"
       description="เรียนรู้และฝึกฝนกระบวนการคิดสร้างมูลค่าให้ธุรกิจด้วยข้อมูล"
     />
