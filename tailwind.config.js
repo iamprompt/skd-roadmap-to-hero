@@ -5,7 +5,7 @@ module.exports = {
   content: ['src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     fontFamily: {
-      sans: ['Rubik', 'IBM Plex Sans Thai', ...defaultTheme.fontFamily.sans],
+      sans: ['IBM Plex Sans Thai', 'Rubik', ...defaultTheme.fontFamily.sans],
     },
     extend: {},
   },
