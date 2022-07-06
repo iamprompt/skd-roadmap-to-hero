@@ -3,4 +3,6 @@ export interface ProductCardProps {
   title?: string
   info?: string
   hour?: string
+  instructor?: string;
+  instructorImgUrl?: string;
 }

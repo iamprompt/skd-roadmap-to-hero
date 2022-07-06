@@ -1,7 +1,14 @@
 import type { FC } from 'react'
 import type { ProductCardProps } from './types'
 
-const ProductCard: FC<ProductCardProps> = ({ imgUrl, title, info, hour }) => {
+const ProductCard: FC<ProductCardProps> = ({
+  imgUrl,
+  title,
+  info,
+  hour,
+  instructor,
+  instructorImgUrl,
+}) => {
   const star = (
     <svg
       className="h-6 w-6 text-yellow-500"
@@ -42,11 +49,8 @@ const ProductCard: FC<ProductCardProps> = ({ imgUrl, title, info, hour }) => {
             <span className="ml-1 text-yellow-500">5.0</span>
           </div>
           <div className="flex items-center">
-            <img
-              className="mr-2 h-8 w-8"
-              src="https://public-assets.skooldio.com/storefront-category%2F6bae3f47-a202-42ec-883f-1b5c459d401a%2FSkooldio_logo_crop.jpeg"
-            />
-            <p className="align-middle text-xs">Skooldio Team</p>
+            <img className="mr-2 h-8 w-8" src={instructorImgUrl} />
+            <p className="align-middle text-xs">{instructor}</p>
           </div>
         </div>
       </div>
