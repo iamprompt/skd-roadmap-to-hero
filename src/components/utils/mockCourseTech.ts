@@ -31,7 +31,7 @@ export const mockCourseTech = [
   },
   {
     imgUrl:
-      'https://public-assets.skooldio.com/storefront-sku/0edbd0e1-aabf-439a-a5f7-d19c43718665/Git%20Essentials.png',
+      'https://public-assets.skooldio.com/storefront-sku%2F0edbd0e1-aabf-439a-a5f7-d19c43718665%2FGit%2520Essentials.png',
     title: 'Git Essentials for Developers',
     info: 'พื้นฐานแน่น แม่นคำสั่ง เรียนรู้การใช้ Git อย่างมืออาชีพ',
     hour: '3 ชั่วโมง',

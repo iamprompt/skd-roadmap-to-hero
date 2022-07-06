@@ -21,19 +21,19 @@ const ProductCard: FC<ProductCardProps> = ({
   )
 
   return (
-    <div className="block w-80 rounded-lg shadow-lg">
+    <div className="block rounded-lg shadow-lg">
       <div>
         <img className="rounded-t-lg" src={imgUrl} />
       </div>
-      <div className=" mt-3 mr-3 ml-4 mb-5">
-        <div className="mb-16">
+      <div className=" mt-3 mr-3 ml-4 mb-5 ">
+        <div className="mb-16 min-h-137">
           <span className="text-sm text-yellow-400">ONLINE COURSE</span>
           <p className="text-xl font-medium">{title}</p>
           <p className="text-gray-400">{info}</p>
         </div>
         <div>
-          <div className="mb-4">
-            <span>
+          <div className="mb-4 flex flex-row">
+            <span className="flex flex-row">
               {[...Array(5)].map((index) => (
                 <svg
                   className="h-5 w-5 text-yellow-500"
@@ -49,12 +49,12 @@ const ProductCard: FC<ProductCardProps> = ({
             <span className="ml-1 text-yellow-500">5.0</span>
           </div>
           <div className="flex items-center">
-            <img className="mr-2 h-8 w-8" src={instructorImgUrl} />
+            <img className="mr-2 h-8 w-8 rounded-full" src={instructorImgUrl} />
             <p className="align-middle text-xs">{instructor}</p>
           </div>
         </div>
       </div>
-      <div className="flex items-center border-t p-2">
+      <div className="inset-x-0 bottom-0 flex items-center border-t p-2">
         <svg
           className="mr-2 h-4 w-4 text-yellow-500"
           fill="currentColor"
