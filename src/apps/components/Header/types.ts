@@ -6,4 +6,5 @@ export interface Navigation {
 
 export interface HeaderProps {
   navigation: Navigation[]
+  className?: string
 }

@@ -19,6 +19,9 @@ module.exports = {
       colors: {
         skooldio: '#FFA629',
       },
+      colors: {
+        primary: 'rgb(250, 169, 26)',
+      },
     },
     minHeight: {
       137: '8.5rem',

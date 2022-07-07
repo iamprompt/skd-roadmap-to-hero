@@ -1,11 +1,12 @@
+import clsx from 'clsx'
 import Link from 'next/link'
 import type { FC } from 'react'
 import type { HeaderProps } from './types'
 
-const Header: FC<HeaderProps> = ({ navigation }) => {
+const Header: FC<HeaderProps> = ({ navigation, className }) => {
   return (
-    <header className="h-16 w-full bg-white shadow-md">
-      <div className="mx-auto flex h-full max-w-screen-lg items-center justify-between px-5">
+    <header className={clsx('h-16 w-full bg-white shadow-md', className)}>
+      <div className="mx-auto flex h-full max-w-screen-xl items-center justify-between px-5">
         <div>
           <img
             src="/static/images/Skooldio_Logo.svg"
