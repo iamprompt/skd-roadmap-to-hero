@@ -18,8 +18,6 @@ module.exports = {
       },
       colors: {
         skooldio: '#FFA629',
-      },
-      colors: {
         primary: 'rgb(250, 169, 26)',
         secondary: 'rgb(238, 102, 34)',
       },
