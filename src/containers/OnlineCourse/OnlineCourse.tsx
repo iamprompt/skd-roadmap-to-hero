@@ -14,12 +14,12 @@ const OnlineCourse: FC<OnlineCourseProps> = ({
   onlineLink,
 }) => {
   return (
-    <div className="mt-20 mb-20 2xl:pl-80 2xl:pr-80">
+    <div>
       <div className="mb-10 flex justify-between">
         <p className="text-4xl font-semibold">{onlineTitle}</p>
         {onlineLink && (
           <a href={onlineLink}>
-            <p className="text-lg font-semibold text-skooldio">
+            <p className="text-skooldio text-lg font-semibold">
               ดูคอร์สออนไลน์ทั้งหมด
             </p>
           </a>
