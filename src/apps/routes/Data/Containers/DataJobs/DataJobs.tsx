@@ -77,7 +77,7 @@ const DataJobs = () => {
                       </div>
                     </div>
                     {/* salary section */}
-                    <div className="py-24">
+                    <div className="mt-20 py-24">
                       <div className="mb-10">
                         <p className="text-4xl font-semibold">Salary/Income</p>
                       </div>
@@ -208,7 +208,7 @@ const DataJobs = () => {
                     {/* Step Guide */}
                     <StepGuide />
                     {/* Skooldio Guide */}
-                    <div className="flex">
+                    <div className="mt-20 flex">
                       <div className="w-2/3">
                         <div>
                           <p className="text-2xl">ให้เราช่วยจัดคอร์สให้คุณ!</p>
