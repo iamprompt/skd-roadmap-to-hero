@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const ReadMore = () => {
   return (
-    <section className="py-10">
+    <section className="py-20">
       <div className="mx-auto flex max-w-screen-xl items-center justify-center">
         <p className="col-span-2 text-3xl font-semibold leading-10 lg:mr-36">
           หากสนใจ Skooldio Guide <br /> สามารถเลือกดูสายอาชีพที่สนใจ <br />

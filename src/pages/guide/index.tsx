@@ -17,8 +17,8 @@ const Guide = () => {
         />
         <Roadmap />
         <Certificate />
-        <ReadMore />
       </div>
+      <ReadMore />
     </Layout>
   )
 }
