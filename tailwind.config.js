@@ -12,6 +12,9 @@ module.exports = {
         83: '20.75rem',
         92: '23rem',
       },
+      colors: {
+        primary: 'rgb(250, 169, 26)',
+      },
     },
     minHeight: {
       137: '8.5rem',
