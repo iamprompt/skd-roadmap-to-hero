@@ -1,34 +1,6 @@
-import CategoryCard from 'src/apps/components/CategoryCard'
-import { mockCategoryData } from 'src/components/utils/mockCategoryData'
 import Hero from '~/apps/routes/Guide/Containers/Hero'
+import CategoryGuide from '~/apps/routes/Guide/Containers/CategoryGuide'
 import { Layout } from '~/apps/layouts'
-
-const CategoryGuide = () => {
-  return (
-    <div
-      id="category-guide"
-      className="mt-20 mb-20 grid items-center justify-center sm:pl-10  2xl:pl-80 2xl:pr-80"
-    >
-      <p className="mb-3 block text-4xl font-medium tracking-tight">
-        ลองดูสายอาชีพที่คุณสนใจ เพื่อดู Roadmap{' '}
-      </p>
-      <div className="grid gap-2 md:grid-cols-3 lg:grid-cols-4">
-        {mockCategoryData.map((category) => {
-          const { linkUrl, imgUrl, categoryName, description } = category || {}
-          return (
-            <CategoryCard
-              linkUrl={linkUrl}
-              imgUrl={imgUrl}
-              categoryName={categoryName}
-              description={description}
-              key={categoryName}
-            />
-          )
-        })}
-      </div>
-    </div>
-  )
-}
 
 const RoadmapGuide = () => {
   return (
