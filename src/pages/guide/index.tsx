@@ -1,98 +1,13 @@
+import Link from 'next/link'
 import CategoryCard from 'src/apps/components/CategoryCard'
 import { mockCategoryData } from 'src/components/utils/mockCategoryData'
+import { Layout } from '~/apps/layouts'
 import Hero from '~/apps/routes/Guide/Containers/Hero'
-
-const HeroGuide = () => {
-  return (
-    <div className="grid h-hero place-content-center bg-gray-100 pl-10">
-      <p className="text-2xl tracking-tighter">
-        อัพสกิลให้พร้อมทำงานสำหรับคนอยากเปลี่ยนสาย
-      </p>
-      <p className="mt-2 mb-4 text-5xl font-semibold tracking-tighter">
-        Skooldio Guide
-      </p>
-      <div className="flex">
-        <div className="w-140">
-          <p className="text-2xl tracking-tighter">
-            หากคุณสนใจที่จะเปลี่ยนสายและต้องการอัปสกิลอย่างถูกต้อง ครบถ้วน
-            พร้อมสมัครงาน พวกเราเป็นตัวช่วยให้กับคุณได้
-          </p>
-          <p className="mt-10 mb-1 text-2xl font-medium tracking-tighter">
-            Skooldio Guide จะช่วยให้คุณ
-          </p>
-          <span className="flex items-center">
-            <img src="/images/component/check_circle.svg" />
-            <p className="ml-1 text-lg tracking-tighter">
-              อัพสกิลครบถ้วนพร้อมทำงาน
-            </p>
-          </span>
-          <span className="flex items-center">
-            <img src="/images/component/check_circle.svg" />
-            <p className="ml-1 text-lg tracking-tighter">
-              ดำเนินตาม step ที่เหมาะสม
-            </p>
-          </span>
-          <span className="flex items-center">
-            <img src="/images/component/check_circle.svg" />
-            <p className="ml-1 text-lg tracking-tighter">
-              ได้รับ Certificate พิเศษ การันตีทักษะใช้ยื่นสมัครงาน
-            </p>
-          </span>
-          <span className="flex items-center">
-            <img src="/images/component/check_circle.svg" />
-            <p className="ml-1 text-lg tracking-tighter">
-              Partnership ที่เปิดรับสมัครตำแหน่งที่คุณสนใจ
-            </p>
-          </span>
-          <button
-            className="mr-2 mb-2 mt-6 rounded-full bg-skooldio py-4 px-8 text-center text-lg text-white"
-            onClick={() => {
-              document
-                .getElementById('category-guide')
-                ?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-            }}
-          >
-            ลองดู Guide สายอาชีพที่สนใจ
-          </button>
-        </div>
-        <div>
-          <img src="/images/hero/fabulous-planning-1 1.svg" />
-        </div>
-      </div>
-    </div>
-  )
-}
-
-const CategoryGuide = () => {
-  return (
-    <div
-      id="category-guide"
-      className="mt-20 mb-20 grid items-center justify-center sm:pl-10  2xl:pl-80 2xl:pr-80"
-    >
-      <p className="mb-3 block text-4xl font-medium tracking-tight">
-        ลองดูสายอาชีพที่คุณสนใจ เพื่อดู Roadmap{' '}
-      </p>
-      <div className="grid gap-2 md:grid-cols-3 lg:grid-cols-4">
-        {mockCategoryData.map((category) => {
-          const { linkUrl, imgUrl, categoryName, description } = category || {}
-          return (
-            <CategoryCard
-              linkUrl={linkUrl}
-              imgUrl={imgUrl}
-              categoryName={categoryName}
-              description={description}
-              key={categoryName}
-            />
-          )
-        })}
-      </div>
-    </div>
-  )
-}
+import Category from '~/containers/Category'
 
 const RoadmapGuide = () => {
   return (
-    <div className="mt-20 mb-40 sm:pl-10  2xl:pl-80 2xl:pr-80">
+    <div className="mt-20 mb-40 2xl:pl-80 2xl:pr-80">
       <div>
         <p className="mb-3 text-5xl font-semibold">Roadmap</p>
         <p className="w-130 text-xl">
@@ -181,10 +96,9 @@ const PartnerGuide = () => {
 
 const Guide = () => {
   return (
-    <div>
-      <HeroGuide />
+    <Layout>
       <Hero />
-      <CategoryGuide />
+      <Category categoryTitle="guide" />
       <RoadmapGuide />
       <AfterGuide />
       <PartnerGuide />
@@ -194,19 +108,14 @@ const Guide = () => {
             หากสนใจ Skooldio Guide <br /> สามารถเลือกดูสายอาชีพที่สนใจ <br />
             เพื่อดู Roadmap ของแต่ละอาชีพได้เลย
           </p>
-          <button
-            className=" h-16 w-80 rounded-full bg-skooldio py-4 px-8 text-center text-lg text-white"
-            onClick={() => {
-              document
-                .getElementById('category-guide')
-                ?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-            }}
-          >
-            ดูสายอาชีพ
-          </button>
+          <Link href="#category-guide">
+            <button className=" h-16 w-80 rounded-full bg-skooldio py-4 px-8 text-center text-lg text-white">
+              ดูสายอาชีพ
+            </button>
+          </Link>
         </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 export default Guide

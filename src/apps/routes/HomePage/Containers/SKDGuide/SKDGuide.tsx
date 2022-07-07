@@ -15,7 +15,7 @@ const SKDGuide = () => {
           <div className="mt-10">
             <a
               className="rounded-full bg-primary py-3 px-5 text-white"
-              href="#"
+              href="/guide"
             >
               อ่านรายละเอียดเพิ่มเติม
             </a>
