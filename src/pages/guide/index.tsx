@@ -1,6 +1,4 @@
 import Link from 'next/link'
-import CategoryCard from 'src/apps/components/CategoryCard'
-import { mockCategoryData } from 'src/components/utils/mockCategoryData'
 import { Layout } from '~/apps/layouts'
 import Hero from '~/apps/routes/Guide/Containers/Hero'
 import Category from '~/containers/Category'
