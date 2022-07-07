@@ -1,10 +1,11 @@
+import Link from 'next/link'
 import Hero from '~/apps/routes/Guide/Containers/Hero'
-import CategoryGuide from '~/apps/routes/Guide/Containers/CategoryGuide'
 import { Layout } from '~/apps/layouts'
+import Category from '~/containers/Category'
 
 const RoadmapGuide = () => {
   return (
-    <div className="mt-20 mb-40 sm:pl-10  2xl:pl-80 2xl:pr-80">
+    <div className="mt-20 mb-40 2xl:pl-80 2xl:pr-80">
       <div>
         <p className="mb-3 text-5xl font-semibold">Roadmap</p>
         <p className="w-130 text-xl">
@@ -95,7 +96,7 @@ const Guide = () => {
   return (
     <Layout>
       <Hero />
-      <CategoryGuide />
+      <Category categoryTitle="guide" />
       <RoadmapGuide />
       <AfterGuide />
       <PartnerGuide />
@@ -105,16 +106,11 @@ const Guide = () => {
             หากสนใจ Skooldio Guide <br /> สามารถเลือกดูสายอาชีพที่สนใจ <br />
             เพื่อดู Roadmap ของแต่ละอาชีพได้เลย
           </p>
-          <button
-            className=" h-16 w-80 rounded-full bg-skooldio py-4 px-8 text-center text-lg text-white"
-            onClick={() => {
-              document
-                .getElementById('category-guide')
-                ?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-            }}
-          >
-            ดูสายอาชีพ
-          </button>
+          <Link href="#category-guide">
+            <button className=" h-16 w-80 rounded-full bg-skooldio py-4 px-8 text-center text-lg text-white">
+              ดูสายอาชีพ
+            </button>
+          </Link>
         </div>
       </div>
     </Layout>
