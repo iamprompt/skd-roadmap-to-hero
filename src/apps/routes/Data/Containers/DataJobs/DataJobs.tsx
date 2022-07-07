@@ -1,5 +1,4 @@
 import { Tab } from '@headlessui/react'
-import clsx from 'clsx'
 import { InlineIcon } from '@iconify/react'
 import checkCircle from '@iconify/icons-heroicons-outline/check-circle'
 import Link from 'next/link'
@@ -11,6 +10,7 @@ import { mockHardSkill } from '@components/utils/mockHardSkill'
 import { mockSoftSkill } from '@components/utils/mockSoftSkill'
 import OnlineCourse from '~/containers/OnlineCourse'
 import { mockCourseData } from '@components/utils/mockCourseData'
+import CareerTabName from '~/apps/routes/Career/Components/CareerTabName'
 
 const RoadmapImage = [
   '/images/data-job/Data-Analyst-Roadmap.svg',
@@ -20,61 +20,43 @@ const RoadmapImage = [
 
 const DataJobs = () => {
   return (
-    <section className="py-24">
-      <div className="mx-auto max-w-screen-xl items-center px-8">
-        <div className="mb-12 w-max">
-          <p className="mb-3 text-4xl font-semibold">สายอาชีพ Data</p>
-          <p className="text-xl">
-            หากคุณสนใจทำงานด้าน Data
-            เราได้รวบรวมข้อมูลที่คุณอยากรู้เกี่ยวกับสายอาชีพในด้านนี้มาให้คุณแล้ว
-          </p>
+    <section className="py-16 pt-24">
+      <Tab.Group>
+        <div className="mx-auto mb-12 max-w-screen-xl items-center px-8">
+          <div className="mb-10">
+            <h2 className="mb-3 text-4xl font-semibold">สายอาชีพ Data</h2>
+            <p className="text-xl">
+              หากคุณสนใจทำงานด้าน Data
+              เราได้รวบรวมข้อมูลที่คุณอยากรู้เกี่ยวกับสายอาชีพในด้านนี้มาให้คุณแล้ว
+            </p>
+          </div>
+          <Tab.List className="my-10 flex w-full gap-x-5">
+            {['Data Analyst', 'Data Scientist', 'Data Engineer'].map(
+              CareerTabName
+            )}
+          </Tab.List>
         </div>
         <div className="w-max">
-          <Tab.Group>
-            <div className="mb-10">
-              <Tab.List>
-                {['Data Analyst', 'Data Scientist', 'Data Engineer'].map(
-                  (category) => (
-                    <Tab
-                      key={category}
-                      className={({ selected }) =>
-                        clsx(
-                          'h-full px-4 py-1 text-xl font-medium outline-none',
-                          selected
-                            ? 'border-b-2 border-secondary text-secondary'
-                            : 'text-gray-400'
-                        )
-                      }
-                    >
-                      {category}
-                    </Tab>
-                  )
-                )}
-              </Tab.List>
-            </div>
-            <Tab.Panels>
-              {[0, 1, 2].map((c) => {
-                const {
-                  vdo,
-                  jobTitle,
-                  jobDescription,
-                  jobSalary1,
-                  jobSalary2,
-                  jobSalary3,
-                } = mockDataJobs[c] || {}
-                return (
-                  <Tab.Panel key={c}>
-                    {/* introduction section */}
-                    <div className="flex items-start">
-                      <div>{vdo}</div>
-                      <div className="ml-10">
-                        <p className="mb-4 text-2xl font-semibold">
-                          {jobTitle}
-                        </p>
-                        <p className="w-130 text-xl leading-8">
-                          {jobDescription}
-                        </p>
-                      </div>
+          <Tab.Panels>
+            {[0, 1, 2].map((c) => {
+              const {
+                vdo,
+                jobTitle,
+                jobDescription,
+                jobSalary1,
+                jobSalary2,
+                jobSalary3,
+              } = mockDataJobs[c] || {}
+              return (
+                <Tab.Panel key={c}>
+                  {/* introduction section */}
+                  <div className="flex items-start">
+                    <div>{vdo}</div>
+                    <div className="ml-10">
+                      <p className="mb-4 text-2xl font-semibold">{jobTitle}</p>
+                      <p className="w-130 text-xl leading-8">
+                        {jobDescription}
+                      </p>
                     </div>
                     {/* salary section */}
                     <div className="mt-20 py-24">
@@ -224,67 +206,70 @@ const DataJobs = () => {
                         <p className="mt-10 mb-3 text-2xl font-medium">
                           ซื้อ Skooldio Guide ได้อะไรบ้าง
                         </p>
-                        <ul className="space-y-2 text-lg">
-                          <li className="flex items-center text-xl">
-                            <InlineIcon
-                              icon={checkCircle}
-                              className="mr-2 text-5xl text-primary"
-                            />
-                            Roadmap ที่จัดคอร์สให้เหมาะสมกับคุณ
-                          </li>
-                          <li className="flex items-center text-xl">
-                            <InlineIcon
-                              icon={checkCircle}
-                              className="mr-2 text-5xl text-primary"
-                            />
-                            เอกสารสรุปเนื้อหาของแต่ละคอร์ส
-                          </li>
-                          <li className="flex items-center text-xl">
-                            <InlineIcon
-                              icon={checkCircle}
-                              className="mr-2 text-5xl text-primary"
-                            />
-                            Certificate พิเศษ การันตีทักษะใช้ยื่นสมัครงาน
-                          </li>
-                          <li className="flex items-center text-xl">
-                            <InlineIcon
-                              icon={checkCircle}
-                              className="mr-2 text-5xl text-primary"
-                            />
-                            แหล่งการเรียนรู้ฟรีที่เราเลือกให้คุณแล้ว
-                          </li>
-                          <li className="flex items-center text-xl">
-                            <InlineIcon
-                              icon={checkCircle}
-                              className="mr-2 text-5xl text-primary"
-                            />
-                            Partnership ที่เปิดรับสมัครตำแหน่งที่คุณสนใจ
-                          </li>
-                          <li className="flex items-center text-xl">
-                            <InlineIcon
-                              icon={checkCircle}
-                              className="mr-2 text-5xl text-primary"
-                            />
-                            ราคาพิเศษ คุ้มกว่าซื้อคอร์สแยก
-                          </li>
-                        </ul>
-                        <div className="mt-16">
-                          <Link href="#category-guide">
-                            <a className="rounded-full bg-[#FFA629] py-6 px-24 text-2xl text-white">
-                              ซื้อตอนนี้
-                            </a>
-                          </Link>
-                        </div>
                       </div>
-                      <div>
-                        <img src={RoadmapImage[c]} />
+                      <p className="mt-10 mb-3 text-2xl font-medium">
+                        ซื้อ Skooldio Guide ได้อะไรบ้าง
+                      </p>
+                      <ul className="space-y-2 text-lg">
+                        <li className="flex items-center text-xl">
+                          <InlineIcon
+                            icon={checkCircle}
+                            className="mr-2 text-5xl text-primary"
+                          />
+                          Roadmap ที่จัดคอร์สให้เหมาะสมกับคุณ
+                        </li>
+                        <li className="flex items-center text-xl">
+                          <InlineIcon
+                            icon={checkCircle}
+                            className="mr-2 text-5xl text-primary"
+                          />
+                          เอกสารสรุปเนื้อหาของแต่ละคอร์ส
+                        </li>
+                        <li className="flex items-center text-xl">
+                          <InlineIcon
+                            icon={checkCircle}
+                            className="mr-2 text-5xl text-primary"
+                          />
+                          Certificate พิเศษ การันตีทักษะใช้ยื่นสมัครงาน
+                        </li>
+                        <li className="flex items-center text-xl">
+                          <InlineIcon
+                            icon={checkCircle}
+                            className="mr-2 text-5xl text-primary"
+                          />
+                          แหล่งการเรียนรู้ฟรีที่เราเลือกให้คุณแล้ว
+                        </li>
+                        <li className="flex items-center text-xl">
+                          <InlineIcon
+                            icon={checkCircle}
+                            className="mr-2 text-5xl text-primary"
+                          />
+                          Partnership ที่เปิดรับสมัครตำแหน่งที่คุณสนใจ
+                        </li>
+                        <li className="flex items-center text-xl">
+                          <InlineIcon
+                            icon={checkCircle}
+                            className="mr-2 text-5xl text-primary"
+                          />
+                          ราคาพิเศษ คุ้มกว่าซื้อคอร์สแยก
+                        </li>
+                      </ul>
+                      <div className="mt-16">
+                        <Link href="#category-guide">
+                          <a className="rounded-full bg-[#FFA629] py-6 px-24 text-2xl text-white">
+                            ซื้อตอนนี้
+                          </a>
+                        </Link>
                       </div>
                     </div>
-                  </Tab.Panel>
-                )
-              })}
-            </Tab.Panels>
-          </Tab.Group>
+                    <div>
+                      <img src={RoadmapImage[c]} />
+                    </div>
+                  </div>
+                </Tab.Panel>
+              )
+            })}
+          </Tab.Panels>
         </div>
         <OtherSource />
         <OnlineCourse
@@ -292,7 +277,7 @@ const DataJobs = () => {
           onlineTitle="คอร์สออนไลน์ Data"
           onlineLink="#"
         />
-      </div>
+      </Tab.Group>
     </section>
   )
 }

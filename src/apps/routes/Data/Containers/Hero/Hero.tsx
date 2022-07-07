@@ -14,7 +14,7 @@ const Hero = () => {
           </p>
         </div>
         <div>
-          <img src="/images/hero/data.svg" />
+          <img src="/images/hero/data.svg" alt="Data" />
         </div>
       </div>
     </section>
