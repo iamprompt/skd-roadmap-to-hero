@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import type { ReactNode } from 'react'
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 
 interface Props {
@@ -11,6 +12,7 @@ export const Layout: NextPage<Props> = ({ children }) => {
     <>
       <Header navigation={[]} className="fixed inset-0" />
       <main className="mt-16">{children}</main>
+      <Footer />
     </>
   )
 }

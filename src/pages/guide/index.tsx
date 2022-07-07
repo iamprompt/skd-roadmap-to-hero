@@ -1,67 +1,7 @@
 import CategoryCard from 'src/apps/components/CategoryCard'
 import { mockCategoryData } from 'src/components/utils/mockCategoryData'
 import Hero from '~/apps/routes/Guide/Containers/Hero'
-
-const HeroGuide = () => {
-  return (
-    <div className="grid h-hero place-content-center bg-gray-100 pl-10">
-      <p className="text-2xl tracking-tighter">
-        อัพสกิลให้พร้อมทำงานสำหรับคนอยากเปลี่ยนสาย
-      </p>
-      <p className="mt-2 mb-4 text-5xl font-semibold tracking-tighter">
-        Skooldio Guide
-      </p>
-      <div className="flex">
-        <div className="w-140">
-          <p className="text-2xl tracking-tighter">
-            หากคุณสนใจที่จะเปลี่ยนสายและต้องการอัปสกิลอย่างถูกต้อง ครบถ้วน
-            พร้อมสมัครงาน พวกเราเป็นตัวช่วยให้กับคุณได้
-          </p>
-          <p className="mt-10 mb-1 text-2xl font-medium tracking-tighter">
-            Skooldio Guide จะช่วยให้คุณ
-          </p>
-          <span className="flex items-center">
-            <img src="/images/component/check_circle.svg" />
-            <p className="ml-1 text-lg tracking-tighter">
-              อัพสกิลครบถ้วนพร้อมทำงาน
-            </p>
-          </span>
-          <span className="flex items-center">
-            <img src="/images/component/check_circle.svg" />
-            <p className="ml-1 text-lg tracking-tighter">
-              ดำเนินตาม step ที่เหมาะสม
-            </p>
-          </span>
-          <span className="flex items-center">
-            <img src="/images/component/check_circle.svg" />
-            <p className="ml-1 text-lg tracking-tighter">
-              ได้รับ Certificate พิเศษ การันตีทักษะใช้ยื่นสมัครงาน
-            </p>
-          </span>
-          <span className="flex items-center">
-            <img src="/images/component/check_circle.svg" />
-            <p className="ml-1 text-lg tracking-tighter">
-              Partnership ที่เปิดรับสมัครตำแหน่งที่คุณสนใจ
-            </p>
-          </span>
-          <button
-            className="mr-2 mb-2 mt-6 rounded-full bg-skooldio py-4 px-8 text-center text-lg text-white"
-            onClick={() => {
-              document
-                .getElementById('category-guide')
-                ?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-            }}
-          >
-            ลองดู Guide สายอาชีพที่สนใจ
-          </button>
-        </div>
-        <div>
-          <img src="/images/hero/fabulous-planning-1 1.svg" />
-        </div>
-      </div>
-    </div>
-  )
-}
+import { Layout } from '~/apps/layouts'
 
 const CategoryGuide = () => {
   return (
@@ -181,8 +121,7 @@ const PartnerGuide = () => {
 
 const Guide = () => {
   return (
-    <div>
-      <HeroGuide />
+    <Layout>
       <Hero />
       <CategoryGuide />
       <RoadmapGuide />
@@ -206,7 +145,7 @@ const Guide = () => {
           </button>
         </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 export default Guide
