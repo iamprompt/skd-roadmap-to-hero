@@ -3,7 +3,7 @@ import clsx from 'clsx'
 
 const OurServices = () => {
   return (
-    <section className="py-16">
+    <section>
       <div className="mx-auto max-w-screen-xl px-8">
         <Tab.Group>
           <div className="mb-10 grid grid-cols-12 gap-10">
@@ -43,7 +43,7 @@ const OurServices = () => {
                     <li>เรียนจบรับประกาศนียบัตร</li>
                     <li>สามารถกลับมาเรียนทบทวนได้</li>
                   </ul>
-                  <div>
+                  <div className="my-5">
                     <a
                       className="rounded-full bg-primary py-3 px-5 text-white"
                       href="#"

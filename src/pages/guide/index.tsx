@@ -2,24 +2,7 @@ import Link from 'next/link'
 import Hero from '~/apps/routes/Guide/Containers/Hero'
 import { Layout } from '~/apps/layouts'
 import Category from '~/containers/Category'
-
-const RoadmapGuide = () => {
-  return (
-    <div className="mt-20 mb-40 2xl:pl-80 2xl:pr-80">
-      <div>
-        <p className="mb-3 text-5xl font-semibold">Roadmap</p>
-        <p className="w-130 text-xl">
-          เราคัดสรรคอร์สออนไลน์ของ Skooldio ที่เหมาะกับแต่ละสายอาชีพที่คุณสนใจ
-          มาจัดเรียงให้เป็นลำดับ ตั้งแต่ระดับเริ่มต้นไปจนถึงระดับเนื้อหาเข้มข้น
-          ให้คุณพร้อมที่จะทำงานได้จริงหลังเรียนจบ
-        </p>
-        <div className="mt-20 grid items-center justify-center">
-          <img src="/images/hero/example-roadmap.svg" />
-        </div>
-      </div>
-    </div>
-  )
-}
+import Roadmap from '~/apps/routes/Guide/Containers/Roadmap'
 
 const AfterGuide = () => {
   return (
@@ -96,21 +79,27 @@ const Guide = () => {
   return (
     <Layout>
       <Hero />
-      <Category title="เลือกสายอาชีพที่คุณสนใจ เพื่อดู Guide การเรียน" />
-      <RoadmapGuide />
-      <AfterGuide />
-      <PartnerGuide />
-      <div className="mt-40 mb-20 grid place-content-center 2xl:pl-64 2xl:pr-80">
-        <div className="mt-10 grid items-center justify-center sm:grid-cols-1 lg:grid-cols-3">
-          <p className="col-span-2 text-3xl font-semibold leading-10 lg:mr-36">
-            หากสนใจ Skooldio Guide <br /> สามารถเลือกดูสายอาชีพที่สนใจ <br />
-            เพื่อดู Roadmap ของแต่ละอาชีพได้เลย
-          </p>
-          <Link href="#category-guide">
-            <button className=" h-16 w-80 rounded-full bg-skooldio py-4 px-8 text-center text-lg text-white">
-              ดูสายอาชีพ
-            </button>
-          </Link>
+      <div className="space-y-16">
+        <Category
+          title="เลือกสายอาชีพที่คุณสนใจ เพื่อดู Guide การเรียน"
+          id="category-guide"
+          className="scroll-m-16 pt-10"
+        />
+        <Roadmap />
+        <AfterGuide />
+        <PartnerGuide />
+        <div className="mt-40 mb-20 grid place-content-center 2xl:pl-64 2xl:pr-80">
+          <div className="mt-10 grid items-center justify-center sm:grid-cols-1 lg:grid-cols-3">
+            <p className="col-span-2 text-3xl font-semibold leading-10 lg:mr-36">
+              หากสนใจ Skooldio Guide <br /> สามารถเลือกดูสายอาชีพที่สนใจ <br />
+              เพื่อดู Roadmap ของแต่ละอาชีพได้เลย
+            </p>
+            <Link href="#category-guide">
+              <button className=" h-16 w-80 rounded-full bg-skooldio py-4 px-8 text-center text-lg text-white">
+                ดูสายอาชีพ
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </Layout>

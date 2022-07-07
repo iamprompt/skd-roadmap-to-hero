@@ -13,16 +13,19 @@ const Home: NextPage = () => {
     <Layout>
       <Hero />
       <LoyalCustomer />
-      <OurServices />
-      <Category
-        title={
-          <>
-            ไม่ว่าคุณต้องการ<span className="text-skooldio">อัพสกิล</span>{' '}
-            หรือต้องการ<span className="text-skooldio">เปลี่ยนสาย</span> <br />
-            ก็สามารถเลือกเรียนตามเรื่องที่คุณสนใจได้เลย
-          </>
-        }
-      />
+      <div className="space-y-10 py-16">
+        <OurServices />
+        <Category
+          title={
+            <>
+              ไม่ว่าคุณต้องการ<span className="text-skooldio">อัพสกิล</span>{' '}
+              หรือต้องการ<span className="text-skooldio">เปลี่ยนสาย</span>{' '}
+              <br />
+              ก็สามารถเลือกเรียนตามเรื่องที่คุณสนใจได้เลย
+            </>
+          }
+        />
+      </div>
       <SKDGuide />
       <OnlineCourse
         courses={mockCourseTech.slice(0, 4)}
