@@ -1,5 +1,6 @@
 import CategoryCard from 'src/apps/components/CategoryCard'
 import { mockCategoryData } from 'src/components/utils/mockCategoryData'
+import Hero from '~/apps/routes/Guide/Containers/Hero'
 
 const HeroGuide = () => {
   return (
@@ -182,6 +183,7 @@ const Guide = () => {
   return (
     <div>
       <HeroGuide />
+      <Hero />
       <CategoryGuide />
       <RoadmapGuide />
       <AfterGuide />
