@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Hero from '~/apps/routes/Guide/Containers/Hero'
 import { Layout } from '~/apps/layouts'
 import Category from '~/containers/Category'
