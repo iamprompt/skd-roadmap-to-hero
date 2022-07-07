@@ -1,6 +1,6 @@
 export const mockCategoryData = [
   {
-    linkUrl: '#',
+    linkUrl: '/data',
     imgUrl: '/images/category/data-icon.png',
     categoryName: 'Data',
     description: 'เรียนรู้และฝึกฝนกระบวนการคิดสร้างมูลค่าให้ธุรกิจด้วยข้อมูล',

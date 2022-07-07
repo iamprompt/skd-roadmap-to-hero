@@ -11,7 +11,13 @@ module.exports = {
       width: {
         83: '20.75rem',
         92: '23rem',
+        100: '25rem',
+        110: '27.5rem',
+        120: '30rem',
+        130: '32.5rem',
         140: '35rem',
+        150: '37.5rem',
+        160: '40rem',
       },
       height: {
         hero: '46rem',

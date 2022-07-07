@@ -9,7 +9,7 @@ const CategoryCard = ({
   return (
     <a
       href={linkUrl}
-      className="flex w-72 items-center rounded-md pt-8 pl-8 pb-8 shadow-md"
+      className="flex w-72 items-center overflow-hidden rounded-md bg-white pt-8 pl-8 pb-8 shadow-md"
     >
       <div className="w-48">
         <div className="mb-6 flex items-center">
