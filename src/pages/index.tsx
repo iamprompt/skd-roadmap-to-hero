@@ -13,7 +13,7 @@ const Home: NextPage = () => {
     <Layout>
       <Hero />
       <LoyalCustomer />
-      <div className="space-y-10 py-16">
+      <div className="space-y-20 py-16">
         <OurServices />
         <Category
           title={
