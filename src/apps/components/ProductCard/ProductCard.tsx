@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import type { FC } from 'react'
 import type { ProductCardProps } from './types'
 
@@ -8,6 +9,7 @@ const ProductCard: FC<ProductCardProps> = ({
   hour,
   instructor,
   instructorImgUrl,
+  className,
 }) => {
   const star = (
     <svg
@@ -21,7 +23,7 @@ const ProductCard: FC<ProductCardProps> = ({
   )
 
   return (
-    <div className="block rounded-lg shadow-lg">
+    <div className={clsx('block w-72 rounded-lg shadow-lg', className)}>
       <div>
         <img className="rounded-t-lg" src={imgUrl} />
       </div>

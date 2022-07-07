@@ -28,7 +28,7 @@ const Home: NextPage = () => {
       </div>
       <SKDGuide />
       <OnlineCourse
-        courses={mockCourseTech.slice(0, 4)}
+        courses={mockCourseTech.slice(0, 10)}
         onlineTitle="คอร์สออนไลน์"
         onlineLink="#"
       />
