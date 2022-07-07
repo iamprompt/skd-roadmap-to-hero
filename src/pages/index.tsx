@@ -13,7 +13,7 @@ const Home: NextPage = () => {
     <Layout>
       <Hero />
       <LoyalCustomer />
-      <div className="space-y-10 py-16">
+      <div className="space-y-20 py-16">
         <OurServices />
         <Category
           title={
@@ -28,7 +28,7 @@ const Home: NextPage = () => {
       </div>
       <SKDGuide />
       <OnlineCourse
-        courses={mockCourseTech.slice(0, 4)}
+        courses={mockCourseTech.slice(0, 10)}
         onlineTitle="คอร์สออนไลน์"
         onlineLink="#"
       />
