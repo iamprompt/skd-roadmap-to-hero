@@ -290,6 +290,7 @@ const DataJobs = () => {
         <OnlineCourse
           courses={mockCourseData}
           onlineTitle="คอร์สออนไลน์ Data"
+          onlineLink="#"
         />
       </div>
     </section>
