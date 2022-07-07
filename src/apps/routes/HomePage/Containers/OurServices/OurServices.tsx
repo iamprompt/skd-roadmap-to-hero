@@ -45,7 +45,7 @@ const OurServices = () => {
                   </ul>
                   <div>
                     <a
-                      className="rounded-full bg-primary py-2 px-5 text-white"
+                      className="rounded-full bg-primary py-3 px-5 text-white"
                       href="#"
                     >
                       ดูคอร์สออนไลน์ทั้งหมด
