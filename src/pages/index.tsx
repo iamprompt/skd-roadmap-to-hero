@@ -14,7 +14,15 @@ const Home: NextPage = () => {
       <Hero />
       <LoyalCustomer />
       <OurServices />
-      <Category categoryTitle="landing" />
+      <Category
+        title={
+          <>
+            ไม่ว่าคุณต้องการ<span className="text-skooldio">อัพสกิล</span>{' '}
+            หรือต้องการ<span className="text-skooldio">เปลี่ยนสาย</span> <br />
+            ก็สามารถเลือกเรียนตามเรื่องที่คุณสนใจได้เลย
+          </>
+        }
+      />
       <SKDGuide />
       <OnlineCourse
         courses={mockCourseTech.slice(0, 4)}

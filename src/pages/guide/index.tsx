@@ -96,7 +96,7 @@ const Guide = () => {
   return (
     <Layout>
       <Hero />
-      <Category categoryTitle="guide" />
+      <Category title="เลือกสายอาชีพที่คุณสนใจ เพื่อดู Guide การเรียน" />
       <RoadmapGuide />
       <AfterGuide />
       <PartnerGuide />
