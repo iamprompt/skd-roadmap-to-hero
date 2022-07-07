@@ -1,4 +1,3 @@
-import { useRef } from 'react'
 import CategoryCard from 'src/apps/components/CategoryCard'
 import { mockCategoryData } from 'src/components/utils/mockCategoryData'
 
@@ -117,7 +116,7 @@ const AfterGuide = () => {
       {/* <div className="mt-10 grid sm:grid-cols-1 sm:items-center sm:justify-center lg:grid-cols-2 lg:text-left"> */}
       <div className="mt-10 flex items-center">
         <img src="/images/hero/cert.svg" />
-        <div className="w-120 ml-16 sm:mt-10 lg:mt-0">
+        <div className="ml-16 w-120 sm:mt-10 lg:mt-0">
           <p className="mb-3 text-3xl font-semibold">Certificate</p>
           <p className="text-2xl font-light">
             หลังเรียนครบทุกคอร์สตาม Roadmap แล้ว <br />
@@ -130,7 +129,7 @@ const AfterGuide = () => {
         </div>
       </div>
       <div className="mt-10 grid sm:grid-cols-1 sm:items-center sm:justify-center lg:grid-cols-2">
-        <div className="w-120 ml-4 sm:mt-10 lg:mt-0">
+        <div className="ml-4 w-120 sm:mt-10 lg:mt-0">
           <p className="mb-3 text-3xl font-semibold">Skillscore by Skooldio</p>
           <p className="text-2xl font-light">
             ทดสอบทักษะของคุณหลังเรียนจบ เพื่อให้มั่นใจ <br />
