@@ -1,4 +1,8 @@
-import { mockRoadmap } from '@components/utils/mockRoadmap'
+import type { FC } from 'react'
+import clsx from 'clsx'
+import type { IProgress } from '@components/utils/DataAnalystGuide'
+import { PROGRESS_STATUS } from '@components/utils/DataAnalystGuide'
+import type { ICourse } from '@components/utils/Courses'
 
 export enum CourseState {
   COMPLETE = 'COMPLETE',
@@ -8,62 +12,100 @@ export enum CourseState {
 }
 
 export interface RoadmapProps {
-  state: string
   isLeft: boolean
-  courseImgUrl: string
+  courseName: string
+  courseCoverUrl: string
+  courseId: string
+  state: PROGRESS_STATUS
 }
 
-const RoadmapCourse = ({ state, isLeft, courseImgUrl }: RoadmapProps) => {
-  let imgUrl = ''
-  let haveButton = true
-  let buttonText = ''
-  let isLocked = false
-  if (state === CourseState.COMPLETE) {
-    imgUrl = '/images/component/State=Complete.svg'
-    haveButton = false
-  } else if (state === CourseState.ACTIVE) {
-    imgUrl = '/images/component/State=Active.svg'
-    buttonText = 'เรียนต่อ'
-  } else if (state === CourseState.DISABLE) {
-    imgUrl = '/images/component/State=Disable.svg'
-    buttonText = 'เริ่มเรียน'
-  } else {
-    imgUrl = '/images/component/State=Locked.svg'
-    buttonText = 'ซื้อคอร์ส'
-    isLocked = true
-  }
+interface ILayoverInfo {
+  statusIconPath: string
+  callToAction?: string
+}
+
+const LayoverInfo: Record<PROGRESS_STATUS, ILayoverInfo> = {
+  [PROGRESS_STATUS.COMPLETED]: {
+    statusIconPath: '/images/component/State=Complete.svg',
+  },
+  [PROGRESS_STATUS.IN_PROGRESS]: {
+    statusIconPath: '/images/component/State=Active.svg',
+    callToAction: 'เรียนต่อ',
+  },
+  [PROGRESS_STATUS.NOT_PURCHASED]: {
+    statusIconPath: '/images/component/State=Locked.svg',
+    callToAction: 'ซื้อคอร์ส',
+  },
+  [PROGRESS_STATUS.PURCHASED]: {
+    statusIconPath: '/images/component/State=Disable.svg',
+    callToAction: 'เริ่มเรียน',
+  },
+}
+
+const RoadmapCourse: FC<RoadmapProps> = ({
+  isLeft,
+  courseName,
+  courseCoverUrl,
+  state,
+}) => {
   return (
     <div>
       <div className="flex flex-col items-center">
         <div
-          className={`mx-auto flex w-full items-center
-            ${isLeft ? 'justify-start' : 'justify-end'}`}
+          className={clsx(
+            `mx-auto flex w-full items-center`,
+            isLeft ? 'justify-start' : 'justify-end'
+          )}
         >
           <div
-            className={`w-full lg:w-1/2 ${isLeft ? 'lg:pr-20' : 'lg:pl-20'} `}
+            className={clsx(
+              `w-full lg:w-1/2`,
+              isLeft ? 'lg:pr-20' : 'lg:pl-20'
+            )}
           >
-            <div className="group relative cursor-pointer shadow-lg">
+            <div className="group relative cursor-pointer rounded-xl shadow-lg">
               <img
-                className={`rounded-xl ${isLocked && 'opacity-50'}`}
-                src={courseImgUrl}
+                className={clsx(
+                  `rounded-xl`,
+                  state === PROGRESS_STATUS.NOT_PURCHASED && 'opacity-50'
+                )}
+                src={courseCoverUrl}
+                alt={courseName}
               />
-              {haveButton ? (
-                <button className="absolute top-[35%] left-[27.5%] hidden transform rounded-full bg-primary px-10 py-4 text-2xl text-white transition-all duration-300 ease-out hover:scale-125 group-hover:block group-hover:delay-300 group-hover:ease-in">
-                  {buttonText}
-                </button>
-              ) : null}
+              {LayoverInfo[state].callToAction && (
+                <div className="absolute inset-0 flex h-full w-full items-center justify-center bg-transparent">
+                  <div className="hidden transform transition-all duration-300 ease-out group-hover:block group-hover:delay-300 group-hover:ease-in">
+                    <button
+                      onClick={() => {
+                        console.log('Handle Click!')
+                      }}
+                      className="rounded-full bg-primary px-10 py-3 text-xl text-white"
+                    >
+                      {LayoverInfo[state].callToAction}
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
         <div className="absolute left-1/2 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full sm:translate-y-0 md:translate-y-20">
-          <img src={imgUrl} />
+          <img
+            src={LayoverInfo[state].statusIconPath}
+            alt={`${courseName}-${state}`}
+          />
         </div>
       </div>
     </div>
   )
 }
 
-const Roadmap = () => {
+interface Props {
+  courses: ICourse[]
+  progress: IProgress[]
+}
+
+const Roadmap: FC<Props> = ({ courses, progress }) => {
   return (
     <section className="py-10">
       <div className="mx-auto max-w-screen-xl items-center px-8">
@@ -94,14 +136,15 @@ const Roadmap = () => {
                     </div>
                   </div>
                 </div>
-                {mockRoadmap.map((course, i) => {
-                  const { state, courseImgUrl } = course || {}
+                {courses.map((course, i) => {
                   return (
                     <RoadmapCourse
-                      state={state}
+                      state={progress[i].status}
                       isLeft={i % 2 === 0}
-                      courseImgUrl={courseImgUrl}
-                      key={course.courseImgUrl}
+                      courseCoverUrl={course.coverImageUrl}
+                      courseId={course.id}
+                      courseName={course.title}
+                      key={`ROADMAP-${course.title}`}
                     />
                   )
                 })}

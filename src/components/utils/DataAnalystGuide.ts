@@ -1,6 +1,6 @@
 import type { ICourse } from './Courses'
 
-enum PROGRESS_STATUS {
+export enum PROGRESS_STATUS {
   NOT_PURCHASED = 'NOT_PURCHASED',
   PURCHASED = 'PURCHASED',
   IN_PROGRESS = 'IN_PROGRESS',

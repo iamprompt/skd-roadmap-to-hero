@@ -15,7 +15,10 @@ const Page = () => {
     <Layout>
       <Hero title={DataAnalystGuide.title} courses={DataAnalystGuide.courses} />
       <StepGuide steps={DataCareer[0].stepGuide} />
-      <Roadmap />
+      <Roadmap
+        courses={DataAnalystGuide.courses}
+        progress={DataAnalystGuide.progress}
+      />
       <CourseSupplementary
         courses={DataAnalystGuide.courses}
         progress={DataAnalystGuide.progress}
