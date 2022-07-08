@@ -9,8 +9,8 @@ import { mockJobDescription } from '@components/utils/mockJobDescription'
 import { mockHardSkill } from '@components/utils/mockHardSkill'
 import { mockSoftSkill } from '@components/utils/mockSoftSkill'
 import OnlineCourse from '~/containers/OnlineCourse'
-import { mockCourseData } from '@components/utils/mockCourseData'
 import CareerTabName from '~/apps/routes/Career/Components/CareerTabName'
+import { Courses } from '@components/utils/Course'
 
 const RoadmapImage = [
   '/images/data-job/Data-Analyst-Roadmap.svg',
@@ -263,7 +263,9 @@ const DataJobs = () => {
 
         <OtherSource />
         <OnlineCourse
-          courses={mockCourseData}
+          courses={Courses.filter(
+            (course) => course.categories.topic === 'Data'
+          )}
           onlineTitle="คอร์สออนไลน์ Data"
           onlineLink="#"
         />

@@ -4,10 +4,10 @@ import { useCallback, useRef } from 'react'
 import chevronLeft from '@iconify/icons-heroicons-outline/chevron-left'
 import chevronRight from '@iconify/icons-heroicons-outline/chevron-right'
 import ProductCard from 'src/apps/components/ProductCard'
-import type { ProductCardProps } from 'src/apps/components/ProductCard/types'
+import type { ICourse } from '@components/utils/Course'
 
 interface OnlineCourseProps {
-  courses: ProductCardProps[]
+  courses: ICourse[]
   onlineTitle: string
   onlineLink: string
 }
@@ -58,27 +58,25 @@ const OnlineCourse: FC<OnlineCourseProps> = ({
             ref={carouselElement}
           >
             {courses.map((course, i) => {
-              const {
-                imgUrl,
-                title,
-                info,
-                hour,
-                instructor,
-                instructorImgUrl,
-              } = course || {}
               return (
                 <div
-                  key={`${i}-${title}`}
+                  key={`${i}-${course.title}`}
                   className="shrink-0 snap-start px-2 py-5"
                 >
-                  <ProductCard
-                    imgUrl={imgUrl}
-                    title={title}
-                    info={info}
-                    hour={hour}
-                    instructor={instructor}
-                    instructorImgUrl={instructorImgUrl}
-                  />
+                  <a
+                    href={`https://www.skooldio.com/courses/${course.permalink}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <ProductCard
+                      imgUrl={course.coverImageUrl}
+                      title={course.title}
+                      info={course.subTitle}
+                      hour={course.duration}
+                      instructor={course.instructors[0].name}
+                      instructorImgUrl={course.instructors[0].profileImageUrl}
+                    />
+                  </a>
                 </div>
               )
             })}

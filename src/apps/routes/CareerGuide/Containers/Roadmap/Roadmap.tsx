@@ -40,7 +40,7 @@ const RoadmapCourse = ({ state, isLeft, courseImgUrl }: RoadmapProps) => {
             ${isLeft ? 'justify-start' : 'justify-end'}`}
         >
           <div
-            className={` w-full lg:w-1/2 ${isLeft ? 'lg:pr-20' : 'lg:pl-20'} `}
+            className={`w-full lg:w-1/2 ${isLeft ? 'lg:pr-20' : 'lg:pl-20'} `}
           >
             <div className="relative shadow-lg">
               <img

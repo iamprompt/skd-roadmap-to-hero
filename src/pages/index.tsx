@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import { mockCourseTech } from '@components/utils/mockCourseTech'
 import { Layout } from '~/apps/layouts'
 import Hero from '~/apps/routes/HomePage/Containers/Hero'
 import LoyalCustomer from '~/apps/routes/HomePage/Containers/LoyalCustomer'
@@ -7,6 +6,7 @@ import OurServices from '~/apps/routes/HomePage/Containers/OurServices'
 import SKDGuide from '~/apps/routes/HomePage/Containers/SKDGuide'
 import Category from '~/containers/Category'
 import OnlineCourse from '~/containers/OnlineCourse'
+import { Courses } from '@components/utils/Course'
 
 const Home: NextPage = () => {
   return (
@@ -28,7 +28,9 @@ const Home: NextPage = () => {
       </div>
       <SKDGuide />
       <OnlineCourse
-        courses={mockCourseTech.slice(0, 10)}
+        courses={Courses.filter(
+          (course) => course.categories.category3 === 'Recommended Courses'
+        )}
         onlineTitle="คอร์สออนไลน์"
         onlineLink="#"
       />
