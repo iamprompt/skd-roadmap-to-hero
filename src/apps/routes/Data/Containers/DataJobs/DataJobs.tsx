@@ -3,13 +3,14 @@ import { InlineIcon } from '@iconify/react'
 import checkCircle from '@iconify/icons-heroicons-outline/check-circle'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
-import StepGuide from '../StepGuide'
 import OtherSource from '../OtherSource'
 import OnlineCourse from '~/containers/OnlineCourse'
 import CareerTabName from '~/apps/routes/Career/Components/CareerTabName'
 import { Courses } from '@components/utils/Courses'
 import { DataCareer, SARALY_TYPE } from '@components/utils/DataCareer'
 import '@vime/core/themes/default.css'
+import StepGuide from '~/apps/routes/CareerGuide/Containers/StepGuide'
+import { StepGuides } from '@components/utils/StepGuide'
 
 const Player = dynamic(
   () => import('~/apps/routes/Data/Components/VideoPlayer'),
@@ -151,11 +152,11 @@ const DataJobs = () => {
                       </div>
                     </div>
                   </section>
+                  {/* Step Guide */}
+                  <StepGuide steps={StepGuides} />
 
                   {/* introduction section */}
                   <div className="mx-auto mb-12 max-w-screen-xl items-center px-8">
-                    {/* Step Guide */}
-                    <StepGuide />
                     {/* Skooldio Guide */}
                     <div className="flex items-center justify-between">
                       <div className="mt-20 grow">

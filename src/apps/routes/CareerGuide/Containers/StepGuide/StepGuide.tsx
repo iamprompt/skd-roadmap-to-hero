@@ -1,4 +1,11 @@
-const StepGuide = () => {
+import type { FC } from 'react'
+import type { IStepGuide } from '@components/utils/DataCareer'
+
+interface Props {
+  steps: IStepGuide[]
+}
+
+const StepGuide: FC<Props> = ({ steps }) => {
   return (
     <section className="py-8">
       <div className="mx-auto max-w-screen-xl px-8">
@@ -9,8 +16,8 @@ const StepGuide = () => {
           </p>
         </div>
         <div className="mt-5 flex">
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i}>
+          {steps.map((step, i) => (
+            <div key={step.title}>
               <div className="relative flex items-center">
                 <svg
                   width="281"
@@ -38,13 +45,14 @@ const StepGuide = () => {
                   </defs>
                 </svg>
                 <div className="absolute inset-0 h-full w-full py-4 px-6 pl-12">
-                  <p className="text-2xl font-semibold">STEP {i}</p>
-                  <p>ทำความรู้จัก Data Analyst</p>
+                  <p className="text-2xl font-semibold">STEP {i + 1}</p>
+                  <p>{step.title}</p>
                 </div>
               </div>
-              <ul className="mt-4 list-inside list-decimal space-y-2">
-                <li>ดูรายละเอียดของสายอาชีพ</li>
-                <li>ฟังประสบการณ์ทำงานจริง</li>
+              <ul className="mt-4 list-inside list-disc space-y-2">
+                {step.steps.map((s, j) => (
+                  <li key={`${step.title}-${j}`}>{s}</li>
+                ))}
               </ul>
             </div>
           ))}

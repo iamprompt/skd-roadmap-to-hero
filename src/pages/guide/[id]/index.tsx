@@ -1,3 +1,4 @@
+import { DataCareer } from '@components/utils/DataCareer'
 import { Layout } from '~/apps/layouts'
 import Certificate from '~/apps/routes/CareerGuide/Containers/Certificate'
 import CourseSupplementary from '~/apps/routes/CareerGuide/Containers/CourseSupplementary'
@@ -12,7 +13,7 @@ const Page = () => {
   return (
     <Layout>
       <Hero />
-      <StepGuide />
+      <StepGuide steps={DataCareer[0].stepGuide} />
       <Roadmap />
       <CourseSupplementary />
       <FreeOutsource />

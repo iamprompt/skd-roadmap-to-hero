@@ -14,6 +14,11 @@ interface ISkill {
   content: string
 }
 
+export interface IStepGuide {
+  title: string
+  steps: string[]
+}
+
 interface ICareer {
   id: string
   name: string
@@ -24,6 +29,7 @@ interface ICareer {
   salary: Record<keyof typeof SARALY_TYPE, string>
   jobDescription: string[]
   skills: Record<keyof typeof SKILL_TYPE, ISkill[]>
+  stepGuide: IStepGuide[]
 }
 
 export const DataCareer: ICareer[] = [
@@ -87,6 +93,33 @@ export const DataCareer: ICareer[] = [
         },
       ],
     },
+    stepGuide: [
+      {
+        title: 'ทำความรู้จัก Data Analyst',
+        steps: ['ดูรายละเอียดของสายอาชีพ', 'ฟังประสบการณ์ทำงานจริง'],
+      },
+      {
+        title: 'ตาม Content Data Analyst',
+        steps: ['ดู Video / ฟัง Podcast', 'อ่านบทความ', 'ติดตามเพจ/กลุ่ม'],
+      },
+      {
+        title: 'อัปสกิลให้พร้อม',
+        steps: [
+          'จัดเวลาในการเรียนอย่างมีวินัย',
+          'หาข้อมูลจาก Outsources อื่น ๆ',
+          'เรียนตามลำดับ Roadmap',
+        ],
+      },
+      {
+        title: 'เตรียมสมัครงาน',
+        steps: [
+          'ทำ Skill testing หลังเรียนจบ',
+          'รวบรวม Certificate',
+          'เตรียม Portfolio / Resume',
+          'ฝึกซ้อมสัมภาษณ์',
+        ],
+      },
+    ],
   },
   {
     id: 'data-scientist',
@@ -151,6 +184,33 @@ export const DataCareer: ICareer[] = [
         },
       ],
     },
+    stepGuide: [
+      {
+        title: 'ทำความรู้จัก Data Scientist',
+        steps: ['ดูรายละเอียดของสายอาชีพ', 'ฟังประสบการณ์ทำงานจริง'],
+      },
+      {
+        title: 'ตาม Content Data Scientist',
+        steps: ['ดู Video / ฟัง Podcast', 'อ่านบทความ', 'ติดตามเพจ/กลุ่ม'],
+      },
+      {
+        title: 'อัปสกิลให้พร้อม',
+        steps: [
+          'จัดเวลาในการเรียนอย่างมีวินัย',
+          'หาข้อมูลจาก Outsources อื่น ๆ',
+          'เรียนตามลำดับ Roadmap',
+        ],
+      },
+      {
+        title: 'เตรียมสมัครงาน',
+        steps: [
+          'ทำ Skill testing หลังเรียนจบ',
+          'รวบรวม Certificate',
+          'เตรียม Portfolio / Resume',
+          'ฝึกซ้อมสัมภาษณ์',
+        ],
+      },
+    ],
   },
   {
     id: 'data-engineer',
@@ -214,5 +274,32 @@ export const DataCareer: ICareer[] = [
         },
       ],
     },
+    stepGuide: [
+      {
+        title: 'ทำความรู้จัก Data Engineer',
+        steps: ['ดูรายละเอียดของสายอาชีพ', 'ฟังประสบการณ์ทำงานจริง'],
+      },
+      {
+        title: 'ตาม Content Data Engineer',
+        steps: ['ดู Video / ฟัง Podcast', 'อ่านบทความ', 'ติดตามเพจ/กลุ่ม'],
+      },
+      {
+        title: 'อัปสกิลให้พร้อม',
+        steps: [
+          'จัดเวลาในการเรียนอย่างมีวินัย',
+          'หาข้อมูลจาก Outsources อื่น ๆ',
+          'เรียนตามลำดับ Roadmap',
+        ],
+      },
+      {
+        title: 'เตรียมสมัครงาน',
+        steps: [
+          'ทำ Skill testing หลังเรียนจบ',
+          'รวบรวม Certificate',
+          'เตรียม Portfolio / Resume',
+          'ฝึกซ้อมสัมภาษณ์',
+        ],
+      },
+    ],
   },
 ]
