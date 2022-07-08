@@ -1,4 +1,5 @@
 import type { GetStaticProps } from 'next'
+import Error from 'next/error'
 import { DataCareer } from '@components/utils/DataCareer'
 import { Layout } from '~/apps/layouts'
 import Certificate from '~/apps/routes/CareerGuide/Containers/Certificate'
@@ -47,6 +48,10 @@ export async function getStaticPaths() {
 }
 
 const Page = ({ guide }: { guide: IGuide }) => {
+  if (!guide) {
+    return <Error statusCode={400} />
+  }
+
   return (
     <Layout>
       <Hero title={guide.title} courses={guide.courses} />
