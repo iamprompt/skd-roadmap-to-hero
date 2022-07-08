@@ -24,7 +24,15 @@ const Page = () => {
         progress={DataAnalystGuide.progress}
       />
       <FreeOutsource sources={DataAnalystGuide.freeOutSources} />
-      <Certificate />
+      <Certificate
+        certificateUrl={
+          DataAnalystGuide.progress.reduce((a, c) => a + c.percentComplete, 0) /
+            DataAnalystGuide.progress.length ===
+          100
+            ? DataAnalystGuide.certificatePath
+            : undefined
+        }
+      />
       <Skillscore />
       <JobBoard />
     </Layout>

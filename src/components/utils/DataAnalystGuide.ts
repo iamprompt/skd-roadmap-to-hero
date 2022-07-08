@@ -27,10 +27,12 @@ export interface IGuide {
   courses: ICourse[]
   progress: IProgress[]
   freeOutSources: ISource[]
+  certificatePath?: string
 }
 
 export const DataAnalystGuide: IGuide = {
   title: 'My Data Analyst Guide',
+  certificatePath: '/static/pdf/certificate.pdf',
   courses: [
     {
       id: '49c114c6-3bf5-4221-bba5-12638000ed71',
