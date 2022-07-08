@@ -1,5 +1,6 @@
 import type { FC, ReactNode } from 'react'
 import clsx from 'clsx'
+import Link from 'next/link'
 import { mockCategoryData } from '@components/utils/mockCategoryData'
 import CategoryCard from '~/apps/components/CategoryCard'
 
@@ -21,13 +22,15 @@ const Category: FC<Props> = ({ title, className, id }) => {
             const { linkUrl, imgUrl, categoryName, description } =
               category || {}
             return (
-              <CategoryCard
-                linkUrl={linkUrl}
-                imgUrl={imgUrl}
-                categoryName={categoryName}
-                description={description}
-                key={categoryName}
-              />
+              <Link href={linkUrl} key={categoryName}>
+                <a>
+                  <CategoryCard
+                    imgUrl={imgUrl}
+                    categoryName={categoryName}
+                    description={description}
+                  />
+                </a>
+              </Link>
             )
           })}
         </div>

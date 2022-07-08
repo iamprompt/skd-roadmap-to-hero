@@ -10,7 +10,35 @@ interface Props {
 export const Layout: NextPage<Props> = ({ children }) => {
   return (
     <>
-      <Header navigation={[]} className="fixed inset-0 z-50" />
+      <Header
+        navigation={[
+          {
+            label: 'คอร์สออนไลน์',
+            href: '/',
+          },
+          {
+            label: 'เวิร์กชอป',
+            href: '/',
+          },
+          {
+            label: 'Bootcamp',
+            href: '/',
+          },
+          {
+            label: 'สำหรับองค์กร',
+            href: '/',
+          },
+          {
+            label: 'บทความ',
+            href: '/',
+          },
+          {
+            label: 'Guide',
+            href: '/guide',
+          },
+        ]}
+        className="fixed inset-0 z-50"
+      />
       <main className="mt-16">{children}</main>
       <Footer />
     </>
