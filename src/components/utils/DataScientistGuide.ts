@@ -1,7 +1,7 @@
 import type { IGuide } from './DataAnalystGuide'
 import { PROGRESS_STATUS } from './DataAnalystGuide'
 
-export const DataAnalystGuide: IGuide = {
+export const DataScientistGuide: IGuide = {
   title: 'My Data Scientist Guide',
   courses: [
     {
