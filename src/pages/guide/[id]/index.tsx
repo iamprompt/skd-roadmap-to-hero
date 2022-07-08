@@ -4,6 +4,7 @@ import CourseSupplementary from '~/apps/routes/CareerGuide/Containers/CourseSupp
 import FreeOutsource from '~/apps/routes/CareerGuide/Containers/FreeOutsource'
 import Hero from '~/apps/routes/CareerGuide/Containers/Hero'
 import JobBoard from '~/apps/routes/CareerGuide/Containers/JobBoard'
+import Roadmap from '~/apps/routes/CareerGuide/Containers/Roadmap'
 import Skillscore from '~/apps/routes/CareerGuide/Containers/Skillscore'
 import StepGuide from '~/apps/routes/CareerGuide/Containers/StepGuide'
 
@@ -12,6 +13,7 @@ const Page = () => {
     <Layout>
       <Hero />
       <StepGuide />
+      <Roadmap />
       <CourseSupplementary />
       <FreeOutsource />
       <Certificate />
