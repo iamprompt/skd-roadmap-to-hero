@@ -37,7 +37,7 @@ export const DataCareer: ICareer[] = [
     id: 'data-analyst',
     name: 'นักวิเคราะห์ข้อมูล (Data Analyst หรือ DA)',
     displayName: 'Data Analyst',
-    youtubeIntroVideoId: 'SUTfmhPMZQw',
+    youtubeIntroVideoId: '_2LsnuxZiQ0',
     roadmapPath: '/images/data-job/Data-Analyst-Roadmap.svg',
     description:
       'คือ ผู้นำข้อมูลจากหลายแหล่งในรูปแบบ Structured Data มาผ่าน Data Analysis Tools เพื่อสรุปข้อมูลเชิงลึกหา Business Insight หรือแนวโน้มที่ช่วยในการตัดสินใจหาทางเลือกกำหนดกลยุทธทางด้านธุรกิจ เช่น การลงทุน การลดต้นทุน ราคาขาย การรับพนักงาน การวางแผนการผลิต เป็นต้น เพื่อช่วยสร้างข้อได้เปรียบทางธุรกิจอย่างมีประสิทธิภาพ',
@@ -125,7 +125,7 @@ export const DataCareer: ICareer[] = [
     id: 'data-scientist',
     name: 'นักวิทยาศาสตร์ข้อมูล (Data Scientist หรือ DS)',
     displayName: 'Data Scientist',
-    youtubeIntroVideoId: '_2LsnuxZiQ0',
+    youtubeIntroVideoId: 'i_GFPKq_X54',
     roadmapPath: '/images/data-job/Data-Scientist-Roadmap.svg',
     description:
       'เป็นผู้นำเทคนิคต่าง ๆ ทั้ง Data Mining, เทคนิคเชิงสถิติ, Algorithms และ Machine Learning มาสร้างโมเดล (Model) เพื่อระบุแนวโน้มหรือ Pattern การทำนาย (Predictive Analytics) และหา Insight จากข้อมูล โดย Data Scientist จะนำผลลัพธ์มาใช้เพื่อการตัดสินใจทางธุรกิจ กำหนดกลยุทธ์ที่เหมาะสมให้กับองค์กร',
@@ -216,7 +216,7 @@ export const DataCareer: ICareer[] = [
     id: 'data-engineer',
     name: 'วิศวกรข้อมูล (Data Engineer หรือ DE)',
     displayName: 'Data Engineer',
-    youtubeIntroVideoId: 'i_GFPKq_X54',
+    youtubeIntroVideoId: 'SUTfmhPMZQw',
     roadmapPath: '/images/data-job/Data-Engineer-Roadmap.svg',
     description:
       'ทำหน้าที่สร้างชุดข้อมูลที่ง่ายต่อการวิเคราะห์ โดยปรับปรุงข้อมูล (Transform Data) ทำความสะอาดข้อมูล (Data Cleansing) สร้างความน่าเชื่อถือและคุณภาพของข้อมูลด้วยวิธีการต่าง ๆ โดยทำการรวมข้อมูลดิบจากแหล่งข้อมูลต่าง ๆ (Data Source) เพื่อสร้างชุดข้อมูลตามรูปแบบที่ตอบโจทย์ทางธุรกิจ อีกทั้งยังพัฒนาสถาปัตยกรรมที่ใช้ดึงข้อมูลและการแปลงข้อมูลต่าง ๆ และทดสอบเพื่อการสร้างแบบจำลองในการนำไปใช้ทำนาย คาดการณ์ (Forecast) ตอบโจทย์กับทางธุรกิจให้กับองค์กร',
