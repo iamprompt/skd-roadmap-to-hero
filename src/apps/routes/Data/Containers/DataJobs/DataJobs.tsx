@@ -201,7 +201,7 @@ const DataJobs = () => {
                           ))}
                         </ul>
                         <div className="mt-16">
-                          <Link href="#category-guide">
+                          <Link href={`/guide/${career.id}`}>
                             <a className="rounded-full bg-[#FFA629] py-3 px-24 text-xl text-white">
                               ซื้อตอนนี้
                             </a>
