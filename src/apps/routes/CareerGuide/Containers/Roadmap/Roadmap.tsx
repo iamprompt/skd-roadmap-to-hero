@@ -55,10 +55,7 @@ const RoadmapCourse = ({ state, isLeft, courseImgUrl }: RoadmapProps) => {
             </div>
           </div>
         </div>
-        <div
-          className="absolute left-1/2 flex h-10 w-10 -translate-x-1/2 items-center
-                        justify-center rounded-full sm:translate-y-0 md:translate-y-20"
-        >
+        <div className="absolute left-1/2 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full sm:translate-y-0 md:translate-y-20">
           <img src={imgUrl} />
         </div>
       </div>
@@ -68,7 +65,7 @@ const RoadmapCourse = ({ state, isLeft, courseImgUrl }: RoadmapProps) => {
 
 const Roadmap = () => {
   return (
-    <section className="py-40">
+    <section className="py-10">
       <div className="mx-auto max-w-screen-xl items-center px-8">
         <p className="text-4xl font-semibold">Roadmap</p>
 
@@ -76,11 +73,8 @@ const Roadmap = () => {
           <div className="mx-auto w-full lg:max-w-4xl">
             <div className="relative">
               {/* <!-- Vertical middle line--> */}
-              <div
-                className="absolute left-1/2 hidden h-full w-px -translate-x-1/2 transform 
-                bg-[#D9D9D9] lg:block"
-              ></div>
-              <div className="space-y-12 lg:space-y-8">
+              <div className="absolute left-1/2 hidden h-full w-px -translate-x-1/2 transform bg-[#D9D9D9] lg:block"></div>
+              <div className="space-y-12">
                 {/* start! */}
                 <div>
                   <div className="flex h-32 flex-col items-center">
@@ -100,12 +94,12 @@ const Roadmap = () => {
                     </div>
                   </div>
                 </div>
-                {mockRoadmap.map((course) => {
-                  const { state, isLeft, courseImgUrl } = course || {}
+                {mockRoadmap.map((course, i) => {
+                  const { state, courseImgUrl } = course || {}
                   return (
                     <RoadmapCourse
                       state={state}
-                      isLeft={isLeft}
+                      isLeft={i % 2 === 0}
                       courseImgUrl={courseImgUrl}
                       key={course.courseImgUrl}
                     />
