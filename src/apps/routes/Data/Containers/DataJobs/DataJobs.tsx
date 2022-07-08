@@ -59,7 +59,7 @@ const DataJobs = () => {
                     </div>
 
                     {/* salary section */}
-                    <div className="my-10">
+                    <div className="my-32">
                       <div className="mb-10">
                         <p className="text-4xl font-semibold">Salary/Income</p>
                       </div>
@@ -85,7 +85,7 @@ const DataJobs = () => {
 
                     {/* Job description section */}
                     <div className="my-10">
-                      <p className="mb-8 text-4xl font-semibold ">
+                      <p className="mb-4 text-4xl font-semibold ">
                         Job Description
                       </p>
                       <ul className="ml-2 list-inside list-disc">
@@ -101,7 +101,7 @@ const DataJobs = () => {
                   </div>
 
                   {/* Skill */}
-                  <section className="bg-[#F9F9F9] py-16">
+                  <section className="mt-40 mb-16 bg-[#F9F9F9] py-16">
                     <div className="mx-auto flex max-w-screen-xl items-center justify-center gap-20 px-8">
                       <div>
                         <p className="mb-10 text-center text-4xl font-bold">
@@ -174,10 +174,10 @@ const DataJobs = () => {
                               Skooldio Guide
                             </p>
                             <p className="text-2xl">
-                              หากคุณสนใจที่จะเปลี่ยนสายและต้องการอัปสกิลอย่างถูกต้อง
+                              หากคุณสนใจที่จะเปลี่ยนสาย <br />
+                              และต้องการอัปสกิลอย่างถูกต้อง ครบถ้วน
                               <br />
-                              ครบถ้วน พร้อมสมัครงาน
-                              พวกเราเป็นตัวช่วยให้กับคุณได้
+                              พร้อมสมัครงาน พวกเราเป็นตัวช่วยให้กับคุณได้
                             </p>
                           </div>
                         </div>
