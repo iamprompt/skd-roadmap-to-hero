@@ -15,6 +15,7 @@ import type { IGuide } from '@components/utils/DataAnalystGuide'
 import { DataAnalystGuide } from '@components/utils/DataAnalystGuide'
 import type { IJobData } from '@components/utils/JobData'
 import { JobData } from '@components/utils/JobData'
+import { JobDataScientist } from '@components/utils/JobDataScientist'
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const id = params?.id ?? undefined
@@ -26,7 +27,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       ? DataScientistGuide
       : null
 
-  const job: IJobData[] | null = id === 'data-analyst' ? JobData : null
+  const job: IJobData[] | null =
+    id === 'data-analyst'
+      ? JobData
+      : id === 'data-scientist'
+      ? JobDataScientist
+      : null
 
   if (!id || !guide) {
     return {
