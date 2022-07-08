@@ -7,7 +7,7 @@ interface Props {
 
 const StepGuide: FC<Props> = ({ steps }) => {
   return (
-    <section className="mb-20 py-24">
+    <section className="mb-10 pt-24">
       <div className="mx-auto max-w-screen-xl px-8">
         <div>
           <h2 className="mb-2 text-4xl font-medium">Step Guide</h2>

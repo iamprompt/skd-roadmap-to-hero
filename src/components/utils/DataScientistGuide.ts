@@ -1,36 +1,8 @@
-import type { ICourse } from './Courses'
+import type { IGuide } from './DataAnalystGuide'
+import { PROGRESS_STATUS } from './DataAnalystGuide'
 
-enum PROGRESS_STATUS {
-  NOT_PURCHASED = 'NOT_PURCHASED',
-  PURCHASED = 'PURCHASED',
-  IN_PROGRESS = 'IN_PROGRESS',
-  COMPLETED = 'COMPLETED',
-}
-
-export interface IProgress {
-  courseId: string
-  percentComplete: number
-  status: PROGRESS_STATUS
-}
-
-export interface ISource {
-  title: string
-  description: string
-  source: {
-    displayName: string
-    url: string
-  }
-}
-
-export interface IGuide {
-  title: string
-  courses: ICourse[]
-  progress: IProgress[]
-  freeOutSources: ISource[]
-}
-
-export const DataAnalystGuide: IGuide = {
-  title: 'My Data Analyst Guide',
+export const DataScientistGuide: IGuide = {
+  title: 'My Data Scientist Guide',
   courses: [
     {
       id: 'a09d4aa9-464b-4dbf-be0c-6cc4a6f6bbd7',
