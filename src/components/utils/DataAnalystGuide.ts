@@ -1,4 +1,5 @@
 import type { ICourse } from './Courses'
+import type { IStepGuide } from './DataCareer'
 
 export enum PROGRESS_STATUS {
   NOT_PURCHASED = 'NOT_PURCHASED',
@@ -28,6 +29,7 @@ export interface IGuide {
   progress: IProgress[]
   freeOutSources: ISource[]
   certificatePath?: string
+  stepGuide: IStepGuide[]
 }
 
 export const DataAnalystGuide: IGuide = {
@@ -224,6 +226,33 @@ export const DataAnalystGuide: IGuide = {
         displayName: 'freeCodeCamp',
         url: 'https://www.freecodecamp.org/learn/data-analysis-with-python/',
       },
+    },
+  ],
+  stepGuide: [
+    {
+      title: 'ทำความรู้จัก Data Analyst',
+      steps: ['ดูรายละเอียดของสายอาชีพ', 'ฟังประสบการณ์ทำงานจริง'],
+    },
+    {
+      title: 'ตาม Content Data Analyst',
+      steps: ['ดู Video / ฟัง Podcast', 'อ่านบทความ', 'ติดตามเพจ/กลุ่ม'],
+    },
+    {
+      title: 'อัปสกิลให้พร้อม',
+      steps: [
+        'จัดเวลาในการเรียนอย่างมีวินัย',
+        'หาข้อมูลจาก Outsources อื่น ๆ',
+        'เรียนตามลำดับ Roadmap',
+      ],
+    },
+    {
+      title: 'เตรียมสมัครงาน',
+      steps: [
+        'ทำ Skill testing หลังเรียนจบ',
+        'รวบรวม Certificate',
+        'เตรียม Portfolio / Resume',
+        'ฝึกซ้อมสัมภาษณ์',
+      ],
     },
   ],
 }

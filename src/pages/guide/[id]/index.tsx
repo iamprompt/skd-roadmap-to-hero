@@ -1,6 +1,5 @@
 import type { GetStaticProps } from 'next'
 import Error from 'next/error'
-import { DataCareer } from '@components/utils/DataCareer'
 import { Layout } from '~/apps/layouts'
 import Certificate from '~/apps/routes/CareerGuide/Containers/Certificate'
 import CourseSupplementary from '~/apps/routes/CareerGuide/Containers/CourseSupplementary'
@@ -66,7 +65,7 @@ const Page = ({ guide, job }: { guide: IGuide; job: IJobData[] | null }) => {
   return (
     <Layout>
       <Hero title={guide.title} courses={guide.courses} />
-      <StepGuide steps={DataCareer[0].stepGuide} />
+      <StepGuide steps={guide.stepGuide} />
       <Roadmap courses={guide.courses} progress={guide.progress} />
       <CourseSupplementary courses={guide.courses} progress={guide.progress} />
       <FreeOutsource sources={guide.freeOutSources} />
