@@ -57,7 +57,7 @@ const OnlineCourse: FC<OnlineCourseProps> = ({
             className="hide-scrollbar -my-5 -mx-2 flex w-full snap-x justify-between overflow-x-scroll"
             ref={carouselElement}
           >
-            {courses.map((course) => {
+            {courses.map((course, i) => {
               const {
                 imgUrl,
                 title,
@@ -67,7 +67,10 @@ const OnlineCourse: FC<OnlineCourseProps> = ({
                 instructorImgUrl,
               } = course || {}
               return (
-                <div key={title} className="shrink-0 snap-start px-2 py-5">
+                <div
+                  key={`${i}-${title}`}
+                  className="shrink-0 snap-start px-2 py-5"
+                >
                   <ProductCard
                     imgUrl={imgUrl}
                     title={title}
