@@ -1,6 +1,6 @@
 const JobBoard = () => {
   return (
-    <section className="mt-20 mb-32 py-8">
+    <section className="mt-8 mb-32 py-8">
       <div className="mx-auto max-w-screen-xl px-8">
         <div>
           <h2 className="mb-2 text-4xl font-medium">Job board</h2>
