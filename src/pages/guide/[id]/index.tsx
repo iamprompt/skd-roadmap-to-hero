@@ -19,15 +19,14 @@ import { JobData } from '@components/utils/JobData'
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const id = params?.id ?? undefined
 
-  const guide: IGuide | undefined =
+  const guide: IGuide | null =
     id === 'data-analyst'
       ? DataAnalystGuide
       : id === 'data-scientist'
       ? DataScientistGuide
-      : undefined
+      : null
 
-  const job: IJobData[] | undefined =
-    id === 'data-analyst' ? JobData : undefined
+  const job: IJobData[] | null = id === 'data-analyst' ? JobData : null
 
   if (!id || !guide) {
     return {
@@ -53,13 +52,7 @@ export async function getStaticPaths() {
   }
 }
 
-const Page = ({
-  guide,
-  job,
-}: {
-  guide: IGuide
-  job: IJobData[] | undefined
-}) => {
+const Page = ({ guide, job }: { guide: IGuide; job: IJobData[] | null }) => {
   if (!guide) {
     return <Error statusCode={400} />
   }
