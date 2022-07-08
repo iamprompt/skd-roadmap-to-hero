@@ -3,7 +3,6 @@ import { Icon } from '@iconify/react'
 import type { CategoryCardProps } from './types'
 
 const CategoryCard = ({
-  // linkUrl,
   imgUrl,
   categoryName,
   description,

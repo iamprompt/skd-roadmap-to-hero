@@ -202,7 +202,7 @@ export const DataAnalystGuide: IGuide = {
       description: 'เหมาะสำหรับผู้ไม่มีพื้นฐานการเขียนโปรแกรมมาก่อน',
       source: {
         displayName: 'DataRockie',
-        url: '#',
+        url: 'https://datarockie.com/intro-programming/',
       },
     },
     {
@@ -211,7 +211,7 @@ export const DataAnalystGuide: IGuide = {
         'เรียนรู้พื้นฐานภาษา Python เพื่อใช้ต่อยอดในการวิเคราะห์ข้อมูล',
       source: {
         displayName: 'Coursera',
-        url: '#',
+        url: 'https://www.coursera.org/specializations/python',
       },
     },
     {
@@ -220,7 +220,7 @@ export const DataAnalystGuide: IGuide = {
         'เรียนรู้ Jupyter Notebook และ Modules ต่าง ๆ  ใน Python ที่สามารถนำมาใช้วิเคราะห์ข้อมูล',
       source: {
         displayName: 'freeCodeCamp',
-        url: '#',
+        url: 'https://www.freecodecamp.org/learn/data-analysis-with-python/',
       },
     },
   ],
