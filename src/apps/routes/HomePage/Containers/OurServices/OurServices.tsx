@@ -4,7 +4,7 @@ import clsx from 'clsx'
 const OurServices = () => {
   return (
     <section>
-      <div className="mx-auto max-w-screen-xl px-8">
+      <div className="mx-auto max-w-screen-xl px-8 pb-12">
         <Tab.Group>
           <div className="mb-10 grid grid-cols-12 gap-10">
             <h2 className="col-span-5 text-4xl font-medium">

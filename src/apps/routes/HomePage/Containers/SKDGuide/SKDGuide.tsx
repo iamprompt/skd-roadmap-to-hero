@@ -1,6 +1,6 @@
 const SKDGuide = () => {
   return (
-    <section className="bg-[#F9F9F9] py-10">
+    <section className="my-20 bg-[#F9F9F9] py-10">
       <div className="mx-auto flex max-w-screen-xl items-center justify-between gap-20 px-8">
         <div className="w-full">
           <p className="mb-3 text-xl">
