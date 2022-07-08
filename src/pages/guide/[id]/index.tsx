@@ -1,3 +1,4 @@
+import { DataAnalystGuide } from '@components/utils/DataAnalystGuide'
 import { DataCareer } from '@components/utils/DataCareer'
 import { Layout } from '~/apps/layouts'
 import Certificate from '~/apps/routes/CareerGuide/Containers/Certificate'
@@ -12,11 +13,14 @@ import StepGuide from '~/apps/routes/CareerGuide/Containers/StepGuide'
 const Page = () => {
   return (
     <Layout>
-      <Hero />
+      <Hero title={DataAnalystGuide.title} courses={DataAnalystGuide.courses} />
       <StepGuide steps={DataCareer[0].stepGuide} />
       <Roadmap />
-      <CourseSupplementary />
-      <FreeOutsource />
+      <CourseSupplementary
+        courses={DataAnalystGuide.courses}
+        progress={DataAnalystGuide.progress}
+      />
+      <FreeOutsource sources={DataAnalystGuide.freeOutSources} />
       <Certificate />
       <Skillscore />
       <JobBoard />
