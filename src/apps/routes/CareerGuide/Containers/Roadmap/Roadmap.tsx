@@ -16,12 +16,14 @@ export interface RoadmapProps {
   courseName: string
   courseCoverUrl: string
   courseId: string
+  permalink: string
   state: PROGRESS_STATUS
 }
 
 interface ILayoverInfo {
   statusIconPath: string
-  callToAction?: string
+  callToActionText?: string
+  callToAction?: `https://${string}`
 }
 
 const LayoverInfo: Record<PROGRESS_STATUS, ILayoverInfo> = {
@@ -30,15 +32,18 @@ const LayoverInfo: Record<PROGRESS_STATUS, ILayoverInfo> = {
   },
   [PROGRESS_STATUS.IN_PROGRESS]: {
     statusIconPath: '/images/component/State=Active.svg',
-    callToAction: 'เรียนต่อ',
+    callToActionText: 'เรียนต่อ',
+    callToAction: `https://www.skooldio.com/dashboard`,
   },
   [PROGRESS_STATUS.NOT_PURCHASED]: {
     statusIconPath: '/images/component/State=Locked.svg',
-    callToAction: 'ซื้อคอร์ส',
+    callToActionText: 'ซื้อคอร์ส',
+    callToAction: `https://www.skooldio.com/courses/{{permalink}}`,
   },
   [PROGRESS_STATUS.PURCHASED]: {
     statusIconPath: '/images/component/State=Disable.svg',
-    callToAction: 'เริ่มเรียน',
+    callToActionText: 'เริ่มเรียน',
+    callToAction: `https://www.skooldio.com/dashboard`,
   },
 }
 
@@ -46,6 +51,7 @@ const RoadmapCourse: FC<RoadmapProps> = ({
   isLeft,
   courseName,
   courseCoverUrl,
+  permalink,
   state,
 }) => {
   return (
@@ -63,7 +69,16 @@ const RoadmapCourse: FC<RoadmapProps> = ({
               isLeft ? 'lg:pr-20' : 'lg:pl-20'
             )}
           >
-            <div className="group relative cursor-pointer rounded-xl shadow-lg">
+            <a
+              href={
+                state === PROGRESS_STATUS.COMPLETED
+                  ? `https://www.skooldio.com/dashboard`
+                  : undefined
+              }
+              target="_blank"
+              className="group relative rounded-xl shadow-lg"
+              rel="noreferrer"
+            >
               <img
                 className={clsx(
                   `rounded-xl`,
@@ -72,21 +87,25 @@ const RoadmapCourse: FC<RoadmapProps> = ({
                 src={courseCoverUrl}
                 alt={courseName}
               />
-              {LayoverInfo[state].callToAction && (
-                <div className="absolute inset-0 flex h-full w-full items-center justify-center bg-transparent">
-                  <div className="hidden transform transition-all duration-300 ease-out group-hover:block group-hover:delay-300 group-hover:ease-in">
-                    <button
-                      onClick={() => {
-                        console.log('Handle Click!')
-                      }}
-                      className="rounded-full bg-primary px-10 py-3 text-xl text-white"
-                    >
-                      {LayoverInfo[state].callToAction}
-                    </button>
+              {LayoverInfo[state].callToAction &&
+                state !== PROGRESS_STATUS.COMPLETED && (
+                  <div className="absolute inset-0 z-20 flex h-full w-full items-center justify-center bg-transparent">
+                    <div className="hidden transform transition-all duration-300 ease-out group-hover:block group-hover:delay-300 group-hover:ease-in">
+                      <a
+                        href={LayoverInfo[state].callToAction?.replace(
+                          '{{permalink}}',
+                          permalink
+                        )}
+                        target="_blank"
+                        className="rounded-full bg-primary px-10 py-3 text-xl text-white"
+                        rel="noreferrer"
+                      >
+                        {LayoverInfo[state].callToActionText}
+                      </a>
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
+                )}
+            </a>
           </div>
         </div>
         <div className="absolute left-1/2 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full sm:translate-y-0 md:translate-y-20">
@@ -131,6 +150,7 @@ const Roadmap: FC<Props> = ({ courses, progress }) => {
                         <img
                           className="w-full"
                           src="/images/component/State=Complete.svg"
+                          alt="Complete"
                         />
                       </div>
                     </div>
@@ -144,6 +164,7 @@ const Roadmap: FC<Props> = ({ courses, progress }) => {
                       courseCoverUrl={course.coverImageUrl}
                       courseId={course.id}
                       courseName={course.title}
+                      permalink={course.permalink}
                       key={`ROADMAP-${course.title}`}
                     />
                   )
@@ -169,6 +190,7 @@ const Roadmap: FC<Props> = ({ courses, progress }) => {
                         <img
                           className="w-full"
                           src="/images/component/State=Disable.svg"
+                          alt="Not Complete"
                         />
                       </div>
                     </div>
