@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 const Skillscore = () => {
   return (
     <section className="py-8">
@@ -8,16 +6,12 @@ const Skillscore = () => {
           <p className="mb-3 text-3xl font-semibold">Skillscore by Skooldio</p>
           <p className="text-2xl font-light">คุณอยู่ในระดับ: -</p>
           <div className="mt-5 flex gap-x-5">
-            <Link href="#category-guide">
-              <a className="rounded-full bg-primary py-3 px-5 text-white">
-                เริ่มทำแบบทดสอบ
-              </a>
-            </Link>
-            <Link href="#category-guide">
-              <a className="rounded-full border border-primary bg-white py-3 px-5 text-primary">
-                ดาวน์โหลด
-              </a>
-            </Link>
+            <a
+              href="https://skillscore.skooldio.com/"
+              className="rounded-full bg-primary py-3 px-5 text-white"
+            >
+              เริ่มทำแบบทดสอบ
+            </a>
           </div>
         </div>
         <div>
