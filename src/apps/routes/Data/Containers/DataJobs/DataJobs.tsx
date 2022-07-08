@@ -2,21 +2,19 @@ import { Tab } from '@headlessui/react'
 import { InlineIcon } from '@iconify/react'
 import checkCircle from '@iconify/icons-heroicons-outline/check-circle'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import StepGuide from '../StepGuide'
 import OtherSource from '../OtherSource'
-import { mockDataJobs } from '@components/utils/mockDataJobs'
-import { mockJobDescription } from '@components/utils/mockJobDescription'
-import { mockHardSkill } from '@components/utils/mockHardSkill'
-import { mockSoftSkill } from '@components/utils/mockSoftSkill'
 import OnlineCourse from '~/containers/OnlineCourse'
 import CareerTabName from '~/apps/routes/Career/Components/CareerTabName'
 import { Courses } from '@components/utils/Courses'
+import { DataCareer, SARALY_TYPE } from '@components/utils/DataCareer'
+import '@vime/core/themes/default.css'
 
-const RoadmapImage = [
-  '/images/data-job/Data-Analyst-Roadmap.svg',
-  '/images/data-job/Data-Scientist-Roadmap.svg',
-  '/images/data-job/Data-Engineer-Roadmap.svg',
-]
+const Player = dynamic(
+  () => import('~/apps/routes/Data/Components/VideoPlayer'),
+  { ssr: false }
+)
 
 const DataJobs = () => {
   return (
@@ -31,33 +29,25 @@ const DataJobs = () => {
             </p>
           </div>
           <Tab.List className="my-10 flex w-full gap-x-5">
-            {['Data Analyst', 'Data Scientist', 'Data Engineer'].map(
-              CareerTabName
-            )}
+            {DataCareer.map((career) => CareerTabName(career.displayName))}
           </Tab.List>
         </div>
         <div>
           <Tab.Panels>
-            {[0, 1, 2].map((c) => {
-              const {
-                vdo,
-                jobTitle,
-                jobDescription,
-                jobSalary1,
-                jobSalary2,
-                jobSalary3,
-              } = mockDataJobs[c] || {}
+            {DataCareer.map((career) => {
               return (
-                <Tab.Panel key={c}>
+                <Tab.Panel key={career.id}>
                   <div className="mx-auto mb-12 max-w-screen-xl items-center px-8">
                     <div className="grid grid-cols-2 gap-10">
-                      <div>{vdo}</div>
-                      <div className="ml-10">
+                      <div>
+                        <Player videoId={career.youtubeIntroVideoId} />
+                      </div>
+                      <div>
                         <p className="mb-4 text-2xl font-semibold">
-                          {jobTitle}
+                          {career.name}
                         </p>
                         <p className="w-130 text-xl leading-8">
-                          {jobDescription}
+                          {career.description}
                         </p>
                       </div>
                     </div>
@@ -68,55 +58,22 @@ const DataJobs = () => {
                         <p className="text-4xl font-semibold">Salary/Income</p>
                       </div>
                       <div className="grid grid-cols-3">
-                        <div className="flex items-center">
-                          <img src="/images/component/salary.svg" />
-                          <div className="ml-5">
-                            <p className="py-1 text-2xl">
-                              <span className="mr-1 text-[50px] text-primary">
-                                <span className="mr-2 font-semibold">
-                                  {jobSalary1}
+                        {Object.entries(career.salary).map(([type, text]) => (
+                          <div className="flex items-center" key={type}>
+                            <img src="/images/component/salary.svg" />
+                            <div className="ml-5">
+                              <p className="py-1 text-2xl">
+                                <span className="mr-1 text-[50px] font-semibold text-primary">
+                                  {text}
                                 </span>
-                                หมื่น
-                              </span>
-                              บาท/เดือน
-                            </p>
-                            <p className="text-2xl font-medium">จบใหม่</p>
+                                บาท/เดือน
+                              </p>
+                              <p className="text-2xl font-medium">
+                                {SARALY_TYPE[type as keyof typeof SARALY_TYPE]}
+                              </p>
+                            </div>
                           </div>
-                        </div>
-                        <div className="flex items-center">
-                          <img src="/images/component/salary.svg" />
-                          <div className="ml-5">
-                            <p className="py-1 text-2xl">
-                              <span className="mr-1 text-[50px] text-primary">
-                                <span className="mr-2 font-semibold">
-                                  {jobSalary2}
-                                </span>
-                                หมื่น
-                              </span>
-                              บาท/เดือน
-                            </p>
-                            <p className="text-2xl font-medium">
-                              ประสบการณ์ 1-5 ปี
-                            </p>
-                          </div>
-                        </div>
-                        <div className="flex items-center">
-                          <img src="/images/component/salary.svg" />
-                          <div className="ml-5">
-                            <p className="py-1 text-2xl">
-                              <span className="mr-1 text-[50px] text-primary">
-                                <span className="mr-2 font-semibold">
-                                  {jobSalary3}
-                                </span>
-                                หมื่น
-                              </span>
-                              บาท/เดือน
-                            </p>
-                            <p className="text-2xl font-medium">
-                              ประสบการณ์ 5 ปีขึ้นไป
-                            </p>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
 
@@ -126,7 +83,7 @@ const DataJobs = () => {
                         Job Description
                       </p>
                       <ul className="ml-2 list-inside list-disc">
-                        {mockJobDescription[c].map((item) => {
+                        {career.jobDescription.map((item) => {
                           return (
                             <li className="mb-1 text-xl" key={item}>
                               {item}
@@ -145,7 +102,7 @@ const DataJobs = () => {
                           Hard Skill
                         </p>
                         <div className="flex">
-                          {mockHardSkill[c].map((item) => {
+                          {career.skills.HARD_SKILL.map((item) => {
                             return (
                               <div
                                 className="mx-2 flex h-[176px] w-[176px] items-center rounded-full bg-gradient-to-br from-[#FFDBA9] to-[#FF9500] text-center"
@@ -172,7 +129,7 @@ const DataJobs = () => {
                           Soft Skill
                         </p>
                         <div className="flex">
-                          {mockSoftSkill[c].map((item) => {
+                          {career.skills.SOFT_SKILL.map((item) => {
                             return (
                               <div
                                 className="mx-2 flex h-[176px] w-[176px] items-center rounded-full bg-gradient-to-br from-[#EFEFEF] to-[#BFBFBF] text-center"
@@ -251,7 +208,7 @@ const DataJobs = () => {
                         </div>
                       </div>
                       <div>
-                        <img src={RoadmapImage[c]} />
+                        <img src={career.roadmapPath} />
                       </div>
                     </div>
                   </div>
