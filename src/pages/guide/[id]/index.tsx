@@ -13,6 +13,8 @@ import StepGuide from '~/apps/routes/CareerGuide/Containers/StepGuide'
 import { DataScientistGuide } from '@components/utils/DataScientistGuide'
 import type { IGuide } from '@components/utils/DataAnalystGuide'
 import { DataAnalystGuide } from '@components/utils/DataAnalystGuide'
+import type { IJobData } from '@components/utils/JobData'
+import { JobData } from '@components/utils/JobData'
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const id = params?.id ?? undefined
@@ -24,6 +26,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       ? DataScientistGuide
       : undefined
 
+  const job: IJobData[] | undefined =
+    id === 'data-analyst' ? JobData : undefined
+
   if (!id || !guide) {
     return {
       notFound: true,
@@ -33,6 +38,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       guide,
+      job,
     },
   }
 }
@@ -47,7 +53,13 @@ export async function getStaticPaths() {
   }
 }
 
-const Page = ({ guide }: { guide: IGuide }) => {
+const Page = ({
+  guide,
+  job,
+}: {
+  guide: IGuide
+  job: IJobData[] | undefined
+}) => {
   if (!guide) {
     return <Error statusCode={400} />
   }
@@ -69,7 +81,7 @@ const Page = ({ guide }: { guide: IGuide }) => {
         }
       />
       <Skillscore />
-      <JobBoard />
+      {job && <JobBoard data={job} />}
     </Layout>
   )
 }

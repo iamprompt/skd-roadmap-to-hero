@@ -1,6 +1,11 @@
-import { JobData } from '@components/utils/JobData'
+import type { FC } from 'react'
+import type { IJobData } from '@components/utils/JobData'
 
-const JobBoard = () => {
+interface Props {
+  data: IJobData[]
+}
+
+const JobBoard: FC<Props> = ({ data }) => {
   return (
     <section className="mt-8 mb-32 py-8">
       <div className="mx-auto max-w-screen-xl px-8">
@@ -9,7 +14,7 @@ const JobBoard = () => {
           <p>บริษัทที่เปิดรับสมัครตำแหน่ง Data Analyst</p>
         </div>
         <div className="mt-5 divide-y rounded-lg bg-white shadow-md">
-          {JobData.map((item) => (
+          {data.map((item) => (
             <div
               key={`${item.company}-${item.title}`}
               className="flex items-center gap-x-4 p-4 px-5"

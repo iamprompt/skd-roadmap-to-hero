@@ -1,3 +1,12 @@
+export interface IJobData {
+  title: string
+  type: string
+  company: string
+  companyLogo: string
+  salary: string
+  location: string
+}
+
 export const JobData = [
   {
     title: 'Data Analyst',
