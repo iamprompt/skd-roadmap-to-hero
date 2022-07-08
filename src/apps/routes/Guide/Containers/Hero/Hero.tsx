@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Hero = () => {
   return (
-    <section className="bg-[#F9F9F9] py-16">
+    <section className="mb-16 bg-[#F9F9F9] py-16">
       <div className="mx-auto flex max-w-screen-xl items-center justify-between gap-20 px-8">
         <div>
           <div className="w-full">
