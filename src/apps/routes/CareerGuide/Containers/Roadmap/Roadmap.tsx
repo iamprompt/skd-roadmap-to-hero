@@ -26,6 +26,13 @@ interface ILayoverInfo {
   callToAction?: `https://${string}`
 }
 
+const StatusIcon: Record<PROGRESS_STATUS, string> = {
+  [PROGRESS_STATUS.COMPLETED]: '/images/component/State=Complete.svg',
+  [PROGRESS_STATUS.IN_PROGRESS]: '/images/component/State=Active.svg',
+  [PROGRESS_STATUS.NOT_PURCHASED]: '/images/component/State=Locked.svg',
+  [PROGRESS_STATUS.PURCHASED]: '/images/component/State=Disable.svg',
+}
+
 const LayoverInfo: Record<PROGRESS_STATUS, ILayoverInfo> = {
   [PROGRESS_STATUS.COMPLETED]: {
     statusIconPath: '/images/component/State=Complete.svg',
@@ -189,7 +196,13 @@ const Roadmap: FC<Props> = ({ courses, progress }) => {
                       <div className="relative">
                         <img
                           className="w-full"
-                          src="/images/component/State=Disable.svg"
+                          src={
+                            progress.every(
+                              (p) => p.status === PROGRESS_STATUS.COMPLETED
+                            )
+                              ? StatusIcon[PROGRESS_STATUS.COMPLETED]
+                              : StatusIcon[PROGRESS_STATUS.IN_PROGRESS]
+                          }
                           alt="Not Complete"
                         />
                       </div>
