@@ -4,7 +4,7 @@ import { useCallback, useRef } from 'react'
 import chevronLeft from '@iconify/icons-heroicons-outline/chevron-left'
 import chevronRight from '@iconify/icons-heroicons-outline/chevron-right'
 import ProductCard from 'src/apps/components/ProductCard'
-import type { ICourse } from '@components/utils/Course'
+import type { ICourse } from '@components/utils/Courses'
 
 interface OnlineCourseProps {
   courses: ICourse[]

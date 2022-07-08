@@ -10,7 +10,7 @@ import { mockHardSkill } from '@components/utils/mockHardSkill'
 import { mockSoftSkill } from '@components/utils/mockSoftSkill'
 import OnlineCourse from '~/containers/OnlineCourse'
 import CareerTabName from '~/apps/routes/Career/Components/CareerTabName'
-import { Courses } from '@components/utils/Course'
+import { Courses } from '@components/utils/Courses'
 
 const RoadmapImage = [
   '/images/data-job/Data-Analyst-Roadmap.svg',

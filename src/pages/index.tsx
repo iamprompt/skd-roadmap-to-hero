@@ -6,7 +6,7 @@ import OurServices from '~/apps/routes/HomePage/Containers/OurServices'
 import SKDGuide from '~/apps/routes/HomePage/Containers/SKDGuide'
 import Category from '~/containers/Category'
 import OnlineCourse from '~/containers/OnlineCourse'
-import { Courses } from '@components/utils/Course'
+import { Courses } from '@components/utils/Courses'
 
 const Home: NextPage = () => {
   return (
