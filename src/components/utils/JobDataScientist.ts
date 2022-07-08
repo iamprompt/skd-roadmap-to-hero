@@ -24,14 +24,6 @@ export const JobDataScientist = [
     location: 'Bangkok',
   },
   {
-    title: 'Data Scientist',
-    type: 'Full Time',
-    company: 'PTT',
-    companyLogo: '/images/company/ptt.svg',
-    salary: '30,000 - 50,000',
-    location: 'Bangkok',
-  },
-  {
     title: 'IT - Data Scientist',
     type: 'Full Time',
     company: 'Krungsri',
