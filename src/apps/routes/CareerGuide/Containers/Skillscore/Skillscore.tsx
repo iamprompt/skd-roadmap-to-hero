@@ -6,6 +6,7 @@ const Skillscore = () => {
       <div className="mx-auto grid max-w-screen-xl grid-cols-2 items-center gap-20 px-8">
         <div>
           <p className="mb-3 text-3xl font-semibold">Skillscore by Skooldio</p>
+          <p className="text-2xl font-light">คุณอยู่ในระดับ: -</p>
           <div className="mt-5 flex gap-x-5">
             <Link href="#category-guide">
               <a className="rounded-full bg-primary py-3 px-5 text-white">

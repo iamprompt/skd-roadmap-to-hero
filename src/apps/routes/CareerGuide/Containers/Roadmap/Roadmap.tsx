@@ -67,7 +67,7 @@ const Roadmap = () => {
   return (
     <section className="py-10">
       <div className="mx-auto max-w-screen-xl items-center px-8">
-        <p className="text-4xl font-semibold">Roadmap</p>
+        <p className="mb-10 text-4xl font-semibold">Roadmap</p>
 
         <div className="flex flex-col justify-center py-6 lg:py-12">
           <div className="mx-auto w-full lg:max-w-4xl">
