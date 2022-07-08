@@ -11,7 +11,10 @@ import Skillscore from '~/apps/routes/CareerGuide/Containers/Skillscore'
 import StepGuide from '~/apps/routes/CareerGuide/Containers/StepGuide'
 import { DataScientistGuide } from '@components/utils/DataScientistGuide'
 import type { IGuide } from '@components/utils/DataAnalystGuide'
-import { DataAnalystGuide } from '@components/utils/DataAnalystGuide'
+import {
+  DataAnalystGuide,
+  PROGRESS_STATUS,
+} from '@components/utils/DataAnalystGuide'
 import type { IJobData } from '@components/utils/JobData'
 import { JobData } from '@components/utils/JobData'
 import { JobDataScientist } from '@components/utils/JobDataScientist'
@@ -71,9 +74,7 @@ const Page = ({ guide, job }: { guide: IGuide; job: IJobData[] | null }) => {
       <FreeOutsource sources={guide.freeOutSources} />
       <Certificate
         certificateUrl={
-          guide.progress.reduce((a, c) => a + c.percentComplete, 0) /
-            guide.progress.length ===
-          100
+          guide.progress.every((p) => p.status === PROGRESS_STATUS.COMPLETED)
             ? guide.certificatePath
             : undefined
         }

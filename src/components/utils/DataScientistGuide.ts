@@ -3,6 +3,7 @@ import { PROGRESS_STATUS } from './DataAnalystGuide'
 
 export const DataScientistGuide: IGuide = {
   title: 'My Data Scientist Guide',
+  certificatePath: '/static/pdf/certificate.pdf',
   courses: [
     {
       id: 'a09d4aa9-464b-4dbf-be0c-6cc4a6f6bbd7',
@@ -149,13 +150,13 @@ export const DataScientistGuide: IGuide = {
     },
     {
       courseId: '49c114c6-3bf5-4221-bba5-12638000ed71',
-      percentComplete: 76,
-      status: PROGRESS_STATUS.IN_PROGRESS,
+      percentComplete: 100,
+      status: PROGRESS_STATUS.COMPLETED,
     },
     {
       courseId: '6d2d0f1b-9c7e-4f5d-8731-553ee88f62d7',
-      percentComplete: 0,
-      status: PROGRESS_STATUS.NOT_PURCHASED,
+      percentComplete: 100,
+      status: PROGRESS_STATUS.COMPLETED,
     },
     {
       courseId: '39c40c6a-0810-4e67-8cb7-ac2b9e9e0656',
@@ -164,8 +165,8 @@ export const DataScientistGuide: IGuide = {
     },
     {
       courseId: '3aefaed0-540b-4468-83f5-f993233feae5',
-      percentComplete: 0,
-      status: PROGRESS_STATUS.NOT_PURCHASED,
+      percentComplete: 100,
+      status: PROGRESS_STATUS.COMPLETED,
     },
   ],
   freeOutSources: [
