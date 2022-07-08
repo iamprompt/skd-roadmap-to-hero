@@ -1,6 +1,6 @@
 const OtherSource = () => {
   return (
-    <div className="mx-auto max-w-screen-xl py-10 px-8">
+    <div className="mx-auto mt-36 mb-20 max-w-screen-xl py-10 px-8">
       <p className="mb-1 text-4xl font-medium">แหล่งข้อมูลอื่นๆ</p>
       <div className="flex justify-center">
         <div className="mr-4 w-[272px] text-center">
