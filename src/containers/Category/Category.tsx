@@ -13,7 +13,9 @@ const Category: FC<Props> = ({ title, className, id }) => {
   return (
     <section id={id} className={clsx(className)}>
       <div className="mx-auto max-w-screen-xl px-8">
-        {title && <h2 className="mb-4 text-4xl font-medium">{title}</h2>}
+        {title && (
+          <h2 className="mb-4 text-4xl font-medium leading-[48px]">{title}</h2>
+        )}
         <div className="grid grid-cols-2 gap-5 lg:grid-cols-4">
           {mockCategoryData.map((category) => {
             const { linkUrl, imgUrl, categoryName, description } =

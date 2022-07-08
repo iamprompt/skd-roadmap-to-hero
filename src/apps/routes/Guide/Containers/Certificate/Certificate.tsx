@@ -1,11 +1,11 @@
 const Certificate = () => {
   return (
     <section>
-      <div className="mx-auto max-w-screen-xl px-8">
+      <div className="sp mx-auto mt-48 max-w-screen-xl px-8">
         <h2 className="mb-16 text-4xl font-medium">
           เรียนจบรับ Certificate และทดสอบสกิลพร้อมไปสมัครงานได้เลย!
         </h2>
-        <div className="space-y-10">
+        <div className="space-y-20">
           <div className="grid grid-cols-2 items-center gap-20">
             <div>
               <img
@@ -43,7 +43,7 @@ const Certificate = () => {
               <img src="/images/hero/skill.jpg" alt="Skooldio Skillscore" />
             </div>
           </div>
-          <div className="grid grid-cols-2 items-center gap-20">
+          <div className="grid grid-cols-2 items-center gap-20 py-20">
             <div>
               <p className="mb-3 text-3xl font-semibold">Partner</p>
               <p className="text-2xl font-light">

@@ -1,6 +1,6 @@
 const SKDGuide = () => {
   return (
-    <section className="bg-[#F9F9F9] py-10">
+    <section className="my-20 bg-[#F9F9F9] py-10">
       <div className="mx-auto flex max-w-screen-xl items-center justify-between gap-20 px-8">
         <div className="w-full">
           <p className="mb-3 text-xl">
@@ -9,7 +9,9 @@ const SKDGuide = () => {
           <h3 className="mb-6 text-5xl font-bold">Skooldio Guide</h3>
           <p>
             หากคุณสนใจที่จะเปลี่ยนสาย แต่ยังไม่รู้ว่าควรจะเริ่มเรียนอะไรบ้าง
+            <br />
             เรามีตัวช่วยให้คุณสามารถเรียนได้อย่างมีระบบตามขั้นตอน
+            <br />
             ได้เรียนเนื้อหาครบถ้วน และมีสกิลที่พร้อมสำหรับการทำงาน
           </p>
           <div className="mt-10">

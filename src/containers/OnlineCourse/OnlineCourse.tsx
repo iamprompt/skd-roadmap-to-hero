@@ -32,7 +32,7 @@ const OnlineCourse: FC<OnlineCourseProps> = ({
   }, [])
 
   return (
-    <section className="py-16">
+    <section className="mb-16 py-16">
       <div className="mx-auto max-w-screen-xl px-8">
         <div className="mb-10 flex justify-between align-baseline">
           <h2 className="text-4xl font-semibold">{onlineTitle}</h2>

@@ -42,13 +42,13 @@ const RoadmapCourse = ({ state, isLeft, courseImgUrl }: RoadmapProps) => {
           <div
             className={`w-full lg:w-1/2 ${isLeft ? 'lg:pr-20' : 'lg:pl-20'} `}
           >
-            <div className="relative shadow-lg">
+            <div className="group relative cursor-pointer shadow-lg">
               <img
                 className={`rounded-xl ${isLocked && 'opacity-50'}`}
                 src={courseImgUrl}
               />
               {haveButton ? (
-                <button className="absolute top-[35%] left-[27.5%] rounded-full bg-primary px-10 py-4 text-2xl text-white">
+                <button className="absolute top-[35%] left-[27.5%] hidden transform rounded-full bg-primary px-10 py-4 text-2xl text-white transition-all duration-300 ease-out hover:scale-125 group-hover:block group-hover:delay-300 group-hover:ease-in">
                   {buttonText}
                 </button>
               ) : null}
@@ -67,7 +67,7 @@ const Roadmap = () => {
   return (
     <section className="py-10">
       <div className="mx-auto max-w-screen-xl items-center px-8">
-        <p className="text-4xl font-semibold">Roadmap</p>
+        <p className="mb-10 text-4xl font-semibold">Roadmap</p>
 
         <div className="flex flex-col justify-center py-6 lg:py-12">
           <div className="mx-auto w-full lg:max-w-4xl">

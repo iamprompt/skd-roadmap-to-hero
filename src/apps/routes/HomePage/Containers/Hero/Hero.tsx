@@ -6,12 +6,14 @@ const Hero = () => {
     <section className="bg-[#F9F9F9]">
       <div className="mx-auto grid max-w-screen-xl grid-cols-2 gap-5 px-8 py-24">
         <div>
-          <h1 className="mb-6 text-5xl font-medium">
-            อัปสกิลให้คุณพร้อมแข่งขันในยุคดิจิทัล
+          <h1 className="mb-6 text-5xl font-medium leading-[60px]">
+            อัปสกิลให้คุณพร้อม
+            <br />
+            แข่งขันในยุคดิจิทัล
           </h1>
           <p className="font-regular mb-6 text-lg text-gray-400">
-            ครบทุกทักษะที่จำเป็นในการทำงาน
-            ผ่านการเรียนในรูปแบบคอร์สออนไลน์หรือเวิร์กชอป
+            ครบทุกทักษะที่จำเป็นในการทำงาน ผ่านการเรียนในรูปแบบ <br />
+            คอร์สออนไลน์หรือเวิร์กชอป
           </p>
           <form className="flex space-x-5">
             <div className="relative">
