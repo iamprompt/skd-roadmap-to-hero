@@ -91,12 +91,6 @@ const OnlineCourse: FC<OnlineCourseProps> = ({
           </button>
         </div>
       </div>
-      {/* <div className="mt-20 mb-20 2xl:pl-80 2xl:pr-80">
-        <div className="mb-10 flex justify-between">
-        </div>
-        <div className="grid justify-center gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        </div>
-      </div> */}
     </section>
   )
 }

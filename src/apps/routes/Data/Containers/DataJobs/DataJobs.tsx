@@ -36,7 +36,7 @@ const DataJobs = () => {
             )}
           </Tab.List>
         </div>
-        <div className="w-max">
+        <div>
           <Tab.Panels>
             {[0, 1, 2].map((c) => {
               const {
@@ -49,17 +49,21 @@ const DataJobs = () => {
               } = mockDataJobs[c] || {}
               return (
                 <Tab.Panel key={c}>
-                  {/* introduction section */}
-                  <div className="flex items-start">
-                    <div>{vdo}</div>
-                    <div className="ml-10">
-                      <p className="mb-4 text-2xl font-semibold">{jobTitle}</p>
-                      <p className="w-130 text-xl leading-8">
-                        {jobDescription}
-                      </p>
+                  <div className="mx-auto mb-12 max-w-screen-xl items-center px-8">
+                    <div className="grid grid-cols-2 gap-10">
+                      <div>{vdo}</div>
+                      <div className="ml-10">
+                        <p className="mb-4 text-2xl font-semibold">
+                          {jobTitle}
+                        </p>
+                        <p className="w-130 text-xl leading-8">
+                          {jobDescription}
+                        </p>
+                      </div>
                     </div>
+
                     {/* salary section */}
-                    <div className="mt-20 py-24">
+                    <div className="my-10">
                       <div className="mb-10">
                         <p className="text-4xl font-semibold">Salary/Income</p>
                       </div>
@@ -115,8 +119,9 @@ const DataJobs = () => {
                         </div>
                       </div>
                     </div>
+
                     {/* Job description section */}
-                    <div className="py-24">
+                    <div className="my-10">
                       <p className="mb-8 text-4xl font-semibold ">
                         Job Description
                       </p>
@@ -130,140 +135,124 @@ const DataJobs = () => {
                         })}
                       </ul>
                     </div>
-                    {/* Skill */}
-                    <section className="bg-[#F9F9F9] py-16">
-                      <div className="mx-auto flex max-w-screen-xl items-center justify-center gap-20 px-8">
-                        <div>
-                          <p className="mb-10 text-center text-4xl font-bold">
-                            Hard Skill
-                          </p>
-                          <div className="flex">
-                            {mockHardSkill[c].map((item) => {
-                              return (
-                                <div
-                                  className="mx-2 flex h-[176px] w-[176px] items-center rounded-full bg-gradient-to-br from-[#FFDBA9] to-[#FF9500] text-center"
-                                  key={item.content}
-                                >
-                                  <div>
-                                    <p className="h-full w-full px-4 text-sm">
-                                      <span className="font-bold">
-                                        {item.heading}
-                                      </span>
-                                      <br />
-                                      {item.content}
-                                    </p>
-                                  </div>
+                  </div>
+
+                  {/* Skill */}
+                  <section className="bg-[#F9F9F9] py-16">
+                    <div className="mx-auto flex max-w-screen-xl items-center justify-center gap-20 px-8">
+                      <div>
+                        <p className="mb-10 text-center text-4xl font-bold">
+                          Hard Skill
+                        </p>
+                        <div className="flex">
+                          {mockHardSkill[c].map((item) => {
+                            return (
+                              <div
+                                className="mx-2 flex h-[176px] w-[176px] items-center rounded-full bg-gradient-to-br from-[#FFDBA9] to-[#FF9500] text-center"
+                                key={item.content}
+                              >
+                                <div>
+                                  <p className="h-full w-full px-4 text-sm">
+                                    <span className="font-bold">
+                                      {item.heading}
+                                    </span>
+                                    <br />
+                                    {item.content}
+                                  </p>
                                 </div>
-                              )
-                            })}
-                          </div>
+                              </div>
+                            )
+                          })}
                         </div>
                       </div>
-                      <div className="mx-auto mt-20 flex max-w-screen-xl items-center justify-center gap-20 px-8">
-                        <div>
-                          <p className="mb-10 text-center text-4xl font-bold">
-                            Soft Skill
-                          </p>
-                          <div className="flex">
-                            {mockSoftSkill[c].map((item) => {
-                              return (
-                                <div
-                                  className="mx-2 flex h-[176px] w-[176px] items-center rounded-full bg-gradient-to-br from-[#EFEFEF] to-[#BFBFBF] text-center"
-                                  key={item.content}
-                                >
-                                  <div>
-                                    <p className="h-full w-full px-4 text-sm">
-                                      <span className="font-bold">
-                                        {item.heading}
-                                      </span>
-                                      <br />
-                                      {item.content}
-                                    </p>
-                                  </div>
+                    </div>
+                    <div className="mx-auto mt-20 flex max-w-screen-xl items-center justify-center gap-20 px-8">
+                      <div>
+                        <p className="mb-10 text-center text-4xl font-bold">
+                          Soft Skill
+                        </p>
+                        <div className="flex">
+                          {mockSoftSkill[c].map((item) => {
+                            return (
+                              <div
+                                className="mx-2 flex h-[176px] w-[176px] items-center rounded-full bg-gradient-to-br from-[#EFEFEF] to-[#BFBFBF] text-center"
+                                key={item.content}
+                              >
+                                <div>
+                                  <p className="h-full w-full px-4 text-sm">
+                                    <span className="font-bold">
+                                      {item.heading}
+                                    </span>
+                                    <br />
+                                    {item.content}
+                                  </p>
                                 </div>
-                              )
-                            })}
-                          </div>
+                              </div>
+                            )
+                          })}
                         </div>
                       </div>
-                    </section>
+                    </div>
+                  </section>
+
+                  {/* introduction section */}
+                  <div className="mx-auto mb-12 max-w-screen-xl items-center px-8">
                     {/* Step Guide */}
                     <StepGuide />
                     {/* Skooldio Guide */}
-                    <div className="mt-20 flex">
-                      <div className="w-2/3">
-                        <div>
-                          <p className="text-2xl">ให้เราช่วยจัดคอร์สให้คุณ!</p>
-                          <p className="mt-4 mb-6 text-5xl font-bold">
-                            Skooldio Guide
-                          </p>
-                          <p className="text-2xl">
-                            หากคุณสนใจที่จะเปลี่ยนสายและต้องการอัปสกิลอย่างถูกต้อง
-                            <br />
-                            ครบถ้วน พร้อมสมัครงาน พวกเราเป็นตัวช่วยให้กับคุณได้
-                          </p>
+                    <div className="flex items-center justify-between">
+                      <div className="mt-20 grow">
+                        <div className="w-2/3">
+                          <div>
+                            <p className="text-2xl">
+                              ให้เราช่วยจัดคอร์สให้คุณ!
+                            </p>
+                            <p className="mt-4 mb-6 text-5xl font-bold">
+                              Skooldio Guide
+                            </p>
+                            <p className="text-2xl">
+                              หากคุณสนใจที่จะเปลี่ยนสายและต้องการอัปสกิลอย่างถูกต้อง
+                              <br />
+                              ครบถ้วน พร้อมสมัครงาน
+                              พวกเราเป็นตัวช่วยให้กับคุณได้
+                            </p>
+                          </div>
                         </div>
                         <p className="mt-10 mb-3 text-2xl font-medium">
                           ซื้อ Skooldio Guide ได้อะไรบ้าง
                         </p>
+                        <ul className="space-y-2 text-lg">
+                          {[
+                            'Roadmap ที่จัดคอร์สให้เหมาะสมกับคุณ',
+                            'เอกสารสรุปเนื้อหาของแต่ละคอร์ส',
+                            'Certificate พิเศษ การันตีทักษะใช้ยื่นสมัครงาน',
+                            'แหล่งการเรียนรู้ฟรีที่เราเลือกให้คุณแล้ว',
+                            'Partnership ที่เปิดรับสมัครตำแหน่งที่คุณสนใจ',
+                            'ราคาพิเศษ คุ้มกว่าซื้อคอร์สแยก',
+                          ].map((item) => (
+                            <li
+                              className="flex items-center text-xl"
+                              key={item}
+                            >
+                              <InlineIcon
+                                icon={checkCircle}
+                                className="mr-2 text-5xl text-primary"
+                              />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="mt-16">
+                          <Link href="#category-guide">
+                            <a className="rounded-full bg-[#FFA629] py-3 px-24 text-xl text-white">
+                              ซื้อตอนนี้
+                            </a>
+                          </Link>
+                        </div>
                       </div>
-                      <p className="mt-10 mb-3 text-2xl font-medium">
-                        ซื้อ Skooldio Guide ได้อะไรบ้าง
-                      </p>
-                      <ul className="space-y-2 text-lg">
-                        <li className="flex items-center text-xl">
-                          <InlineIcon
-                            icon={checkCircle}
-                            className="mr-2 text-5xl text-primary"
-                          />
-                          Roadmap ที่จัดคอร์สให้เหมาะสมกับคุณ
-                        </li>
-                        <li className="flex items-center text-xl">
-                          <InlineIcon
-                            icon={checkCircle}
-                            className="mr-2 text-5xl text-primary"
-                          />
-                          เอกสารสรุปเนื้อหาของแต่ละคอร์ส
-                        </li>
-                        <li className="flex items-center text-xl">
-                          <InlineIcon
-                            icon={checkCircle}
-                            className="mr-2 text-5xl text-primary"
-                          />
-                          Certificate พิเศษ การันตีทักษะใช้ยื่นสมัครงาน
-                        </li>
-                        <li className="flex items-center text-xl">
-                          <InlineIcon
-                            icon={checkCircle}
-                            className="mr-2 text-5xl text-primary"
-                          />
-                          แหล่งการเรียนรู้ฟรีที่เราเลือกให้คุณแล้ว
-                        </li>
-                        <li className="flex items-center text-xl">
-                          <InlineIcon
-                            icon={checkCircle}
-                            className="mr-2 text-5xl text-primary"
-                          />
-                          Partnership ที่เปิดรับสมัครตำแหน่งที่คุณสนใจ
-                        </li>
-                        <li className="flex items-center text-xl">
-                          <InlineIcon
-                            icon={checkCircle}
-                            className="mr-2 text-5xl text-primary"
-                          />
-                          ราคาพิเศษ คุ้มกว่าซื้อคอร์สแยก
-                        </li>
-                      </ul>
-                      <div className="mt-16">
-                        <Link href="#category-guide">
-                          <a className="rounded-full bg-[#FFA629] py-6 px-24 text-2xl text-white">
-                            ซื้อตอนนี้
-                          </a>
-                        </Link>
+                      <div>
+                        <img src={RoadmapImage[c]} />
                       </div>
-                    </div>
-                    <div>
-                      <img src={RoadmapImage[c]} />
                     </div>
                   </div>
                 </Tab.Panel>
@@ -271,6 +260,7 @@ const DataJobs = () => {
             })}
           </Tab.Panels>
         </div>
+
         <OtherSource />
         <OnlineCourse
           courses={mockCourseData}
