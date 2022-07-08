@@ -55,11 +55,18 @@ const DataJobs = () => {
                         <p className="w-130 text-xl leading-8">
                           {career.description}
                         </p>
+                        <div className="mt-10">
+                          <Link href="#skd-guide">
+                            <a className="rounded-full bg-[#FFA629] py-3 px-5 text-xl text-white">
+                              วางแผนด้วย Skooldio Guide
+                            </a>
+                          </Link>
+                        </div>
                       </div>
                     </div>
 
                     {/* salary section */}
-                    <div className="my-32">
+                    <div className="my-20">
                       <div className="mb-10">
                         <p className="text-4xl font-semibold">Salary/Income</p>
                       </div>
@@ -163,7 +170,10 @@ const DataJobs = () => {
                   {/* introduction section */}
                   <div className="mx-auto mb-12 max-w-screen-xl items-center px-8">
                     {/* Skooldio Guide */}
-                    <div className="flex items-center justify-between">
+                    <div
+                      id="skd-guide"
+                      className="flex scroll-m-16 items-center justify-between"
+                    >
                       <div className="mt-20 grow">
                         <div className="w-2/3">
                           <div>
@@ -205,7 +215,7 @@ const DataJobs = () => {
                             </li>
                           ))}
                         </ul>
-                        <div className="mt-16">
+                        <div className="mt-12">
                           <Link href={`/guide/${career.id}`}>
                             <a className="rounded-full bg-[#FFA629] py-3 px-24 text-xl text-white">
                               ซื้อตอนนี้
