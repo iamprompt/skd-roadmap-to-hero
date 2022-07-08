@@ -1,7 +1,12 @@
 import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
+import type { FC } from 'react'
 
-const CareerTabName = (name: string) => {
+interface Props {
+  name: string
+}
+
+const CareerTabName: FC<Props> = ({ name }) => {
   return (
     <Tab className="h-full text-xl font-medium outline-none">
       {({ selected }) => (

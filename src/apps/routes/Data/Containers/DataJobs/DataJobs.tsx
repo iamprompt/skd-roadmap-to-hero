@@ -30,7 +30,12 @@ const DataJobs = () => {
             </p>
           </div>
           <Tab.List className="my-10 flex w-full gap-x-5">
-            {DataCareer.map((career) => CareerTabName(career.displayName))}
+            {DataCareer.map((career) => (
+              <CareerTabName
+                key={career.displayName}
+                name={career.displayName}
+              />
+            ))}
           </Tab.List>
         </div>
         <div>
